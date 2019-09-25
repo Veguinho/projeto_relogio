@@ -2,13 +2,17 @@ library IEEE;
 use ieee.std_logic_1164.all;
 
 component PC is
+	generic
+    (
+        addr : natural := 8
+    );
         port
         (
             -- Input ports
-            pc_i : in  std_logic_vector(3 downto 0);
+            pc_i : in  std_logic_vector(addr-1 downto 0);
             clk : in  std_logic;
             -- Output ports
-            pc_o : out std_logic_vector(6 downto 0)
+            pc_o : out std_logic_vector(addr-1 downto 0)
         );
     end component conversorHex7Seg;
 
@@ -19,3 +23,4 @@ begin
 		pc_o <= pc_i;
 	end if;
 end process;
+
