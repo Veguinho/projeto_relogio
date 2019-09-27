@@ -9,7 +9,7 @@ library ieee;
 	-- STD_LOGIC and STD_LOGIC_VECTOR types, and relevant functions
 	use ieee.std_logic_1164.all;
 	
-entity Aula1 is
+entity mux2 is
 generic (DATA_WIDTH : natural := 2); 
 	port
 	(
@@ -23,7 +23,7 @@ generic (DATA_WIDTH : natural := 2);
 	);
 end entity;
 
-architecture muxElse of Aula1 is
+architecture muxElse of mux2 is
 
 
 begin
@@ -34,7 +34,7 @@ begin
 end architecture;
 
 
-architecture muxSelect of Aula1 is
+architecture muxSelect of mux2 is
 
 
 begin
