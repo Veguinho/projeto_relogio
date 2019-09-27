@@ -1260,3 +1260,4 @@ set_global_assignment -name VHDL_FILE mux2.vhd
 set_global_assignment -name VHDL_FILE bancoRegistradores.vhd
 set_global_assignment -name VHDL_FILE conversorHex7Seg.vhd
 set_global_assignment -name VHDL_FILE top_level.vhd
+set_global_assignment -name VHDL_FILE uc.vhd
