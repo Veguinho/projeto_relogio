@@ -1,7 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity controlunit is
+entity uc is
     port(
         clk : in std_logic;
         enable : in std_logic;
@@ -12,6 +12,6 @@ entity controlunit is
 		  );
 end entity;
 
-architecture description of controlunit is
+architecture description of uc is
 
 begin

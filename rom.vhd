@@ -5,7 +5,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity single_port_rom is
+entity rom is
 
 	generic 
 	(
@@ -22,7 +22,7 @@ entity single_port_rom is
 
 end entity;
 
-architecture rtl of single_port_rom is
+architecture rtl of rom is
 
 	-- Build a 2-D array type for the ROM
 	subtype word_t is std_logic_vector((DATA_WIDTH-1) downto 0);
