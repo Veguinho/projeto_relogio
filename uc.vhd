@@ -6,9 +6,9 @@ entity uc is                                          -- Unidade de Controle
         clk :       in std_logic;
         enable :    in std_logic;
         flag :      in std_logic;
-		  op :      in std_logic_vector(3 downto 0); --oprucao
+		  op :      in std_logic_vector(3 downto 0);  --instrucao opcode
         mux1,mux2 : out std_logic;
-		  opr :     out std_logic_vector(1 downto 0); --oprucao para a ULA
+		  opr :     out std_logic_vector(1 downto 0); --instrucao para a ULA
         we :        out std_logic;                    --Write enable no banco de registradores
 		  rw :        out std_logic                     --Write our read
 		  );
