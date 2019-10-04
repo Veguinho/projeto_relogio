@@ -7,7 +7,7 @@ entity ULA is
 	generic
 		 (
 			  addr : natural := 8;
-			  op_code : natural:= 3
+			  op_code : natural:= 2
 		 );
 	port(
 			clk: in std_logic;
@@ -25,21 +25,15 @@ begin
 	process (clk) is
 		begin
 			if (rising_edge(clk)) then
-					if(OP = "000") then S <= std_logic_vector(IN_mux); --MOV 
+					if(OP = "00") then S <= std_logic_vector(IN_mux); --MOV 
 					end if;
 					
-					if(OP = "001") then S <= std_logic_vector(IN_mux + IN_banco); --ADD
+					if(OP = "01") then S <= std_logic_vector(IN_mux + IN_banco); --ADD
 					end if;
 					
-					if(OP = "010") then 
-							if(IN_mux = IN_banco) then FLAG <= '1'; --COMP
+					if(OP = "10") then 
+							if(IN_mux = IN_banco) then FLAG <= '1'; --COMP e COMPI
 							else FLAG <= '0';
-							end if;
-					end if;
-					
-					if(OP = "110") then 
-							if(IN_mux = IN_banco) then FLAG <= '1'; S <= "00000001"; --COMPi
-							else FLAG <= '0'; S <= "00000000";
 							end if;
 					end if;
 			end if;
