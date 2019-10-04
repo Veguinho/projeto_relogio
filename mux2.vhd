@@ -10,16 +10,16 @@ library ieee;
 	use ieee.std_logic_1164.all;
 	
 entity mux2 is
-generic (DATA_WIDTH : natural := 2); 
+generic (DATA_WIDTH : natural := 21); 
 	port
 	(
 		-- Input ports
-		A	: in std_logic_vector(DATA_WIDTH downto 0);
-		B	: in  std_logic_vector(DATA_WIDTH downto 0);
+		A	: in std_logic_vector(DATA_WIDTH-1 downto 0);
+		B	: in  std_logic_vector(DATA_WIDTH-1 downto 0);
 		Sel : in std_logic;
 
 		-- Output ports
-		Y	: out std_logic_vector(DATA_WIDTH downto 0)
+		Y	: out std_logic_vector(DATA_WIDTH-1 downto 0)
 	);
 end entity;
 
