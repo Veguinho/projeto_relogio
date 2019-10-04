@@ -10,7 +10,7 @@ library ieee;
 	use ieee.std_logic_1164.all;
 	
 entity mux2 is
-generic (DATA_WIDTH : natural := 21); 
+generic (DATA_WIDTH : natural := 8); 
 	port
 	(
 		-- Input ports
