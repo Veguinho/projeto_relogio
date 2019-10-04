@@ -7,9 +7,8 @@ entity uc is                                          -- Unidade de Controle
         flag :      in std_logic;
 		  op :        in std_logic_vector(3 downto 0);    --instrucao opcode
         mux1 :      out std_logic;
-		  opr,mux2 :  out std_logic_vector(1 downto 0);   --instrucao para a ULA
-        we :        out std_logic;                    --Write enable no banco de registradores
-		  rw :        out std_logic                     --Write ou read
+		  opr,mux2,rw :  out std_logic_vector(1 downto 0);   --instrucao para a ULA -- seletor mux2 -- read enable write enable
+        we :        out std_logic                    --Write enable no banco de registradores
 		  );
 end entity;
 
@@ -25,14 +24,14 @@ begin
 				mux1<='0';
 				mux2<="10";
 				we<=  '0';
-				rw<=  '0';
+				rw<=  "00";
 				opr<="00";
 				
 			elsif (op = "0001") then  -- ADD
 				mux1<='0';
 				mux2<="10";
 				we<=  '1';
-				rw<=  '0';
+				rw<=  "00";
 				opr<="01";
 			
 			
@@ -40,7 +39,7 @@ begin
 				mux2<="10";
 				mux1<='0';
 				we<=  '0';
-				rw<=  '0';
+				rw<=  "00";
 				opr<="10";
 			
 			
@@ -49,13 +48,13 @@ begin
 					mux2<="11";
 					mux1<='1';
 					we<=  '0';
-					rw<=  '0';
+					rw<=  "00";
 					opr<="00";
 				elsif(flag='0') then
 					mux2<="11";
 					mux1<='0';
 					we<=  '0';
-					rw<=  '0';
+					rw<=  "00";
 					opr<="00";	
 				end if;
 			
@@ -63,26 +62,26 @@ begin
 				mux2<="11";
 				mux1<='1';
 				we<=  '0';
-				rw<=  '0';
+				rw<=  "00";
 				opr<="00";
 			
 			elsif (op = "0110") then -- COMPI
 				we<=  '1';
 				mux1<='0';
 				mux2<="00";
-				rw<=  '1';
+				rw<=  "01";
 				opr<="10";
 
 			elsif (op = "0101") then -- READ
-				rw<=  '0';
+				rw<=  "10";
 				we<=  '1';
 				mux1<='0';
 				mux2<="00";
 				opr<="00";
 				
-			elsif (op = "1100") then -- WRITE
+			elsif (op = "1100") then -- WRITE/STORE
 				opr<="00";
-				rw<=  '1';
+				rw<=  "01";
 				we<=  '0';
 				mux1<='0';
 				mux2<="01";

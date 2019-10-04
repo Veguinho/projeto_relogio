@@ -15,7 +15,7 @@ entity processador is
 		rom_in :      in std_logic_vector(DATA_WIDTH-1 downto 0); 
 		clk :         in std_logic;     
 		rom_addr :    out std_logic_vector(DATA_WIDTH-1 downto 0);
-		rw :          out std_logic;     
+		rw :          out std_logic_vector(1 downto 0);     
 		dataout :     out std_logic_vector(DATA_WIDTH-1 downto 0);   
 		addr :        out std_logic_vector(DATA_WIDTH-1 downto 0)
 	);
@@ -29,6 +29,7 @@ architecture description of processador is
 	signal mux1_out,mux2_out,addr_out,s1,s2,ula_out: std_logic_vector(ADDR_WIDTH-1 downto 0) ;
 	signal pc_out : std_logic_vector(ADDR_WIDTH-1 downto 0);
 	begin
+	
 	uc: entity work.uc
 		port map(
 		  clk => clk,
@@ -39,6 +40,16 @@ architecture description of processador is
         we =>we_uc,                  					--Write enable no banco de registradores
 		  rw =>rw,		  --Write ou read
 		  flag => flag_uc
+		);
+		
+	ula: entity work.ula
+		port map(
+			clk=>clk,
+			IN_mux=>mux2_out,
+			IN_banco=>s2,
+			OP=>ula_instr,
+			S=>ula_out,
+			FLAG=>flag_uc
 		);
 	
 end description;
