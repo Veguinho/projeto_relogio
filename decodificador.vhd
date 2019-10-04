@@ -20,7 +20,8 @@ entity decodificador is
 	habilitabot1 : out std_logic;
 	habilitabot2 : out std_logic;
 	habilitabot3 : out std_logic;
-	habilitareset : out std_logic
+	habilitareset : out std_logic;
+	basetempo : out std_logic
 	);
 end entity;
 
@@ -35,6 +36,7 @@ architecture su of decodificador is
 		  habilitabot1 <= '1' when entrada = "00000111" and rw = '0' else '0';
 		  habilitabot2 <= '1' when entrada = "00001000" and rw = '0' else '0';
 		  habilitabot3 <= '1' when entrada = "00001001" and rw = '0' else '0';
-		  habilitabotreset <= '1' when entrada = "00001010" and rw = '0' else '0';
+		  habilitareset <= '1' when entrada = "00001010" and rw = '0' else '0';
+		  basetempo <= '1' when entrada = "00001011" and rw = '0' else '0';
 end architecture;
 
