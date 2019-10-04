@@ -9,7 +9,7 @@ entity rom is
 
 	generic 
 	(
-		DATA_WIDTH : natural := 21;
+		DATA_WIDTH : natural := 20;
 		ADDR_WIDTH : natural := 8
 	);
 
