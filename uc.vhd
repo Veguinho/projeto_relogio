@@ -4,13 +4,12 @@ use ieee.std_logic_1164.all;
 entity uc is                                          -- Unidade de Controle
     port(
         clk :       in std_logic;
-        enable :    in std_logic;
         flag :      in std_logic;
 		  op :        in std_logic_vector(3 downto 0);    --instrucao opcode
         mux1 :      out std_logic;
 		  opr,mux2 :  out std_logic_vector(1 downto 0);   --instrucao para a ULA
         we :        out std_logic;                    --Write enable no banco de registradores
-		  rw :        out std_logic                     --Write our read
+		  rw :        out std_logic                     --Write ou read
 		  );
 end entity;
 
@@ -20,100 +19,74 @@ begin
 	process(op)
 	begin
 
-		if (enable = '1') then
+		if (rising_edge(clk)) then
 			
-			if (op = "1000") then  -- Posicao 1 para mux1
-				mux1<='1';
-				mux2<="11";
+			if (op = "0000") then  -- MOV
+				mux1<='0';
+				mux2<="10";
 				we<=  '0';
 				rw<=  '0';
 				opr<="00";
 				
-			elsif (op = "0111") then  -- Posicao 0 para mux1
+			elsif (op = "0001") then  -- ADD
 				mux1<='0';
-				mux2<="11";
-				we<=  '0';
+				mux2<="10";
+				we<=  '1';
 				rw<=  '0';
-				opr<="00";
+				opr<="01";
 			
 			
-			elsif (op = "0100") then -- Posicao 1 para mux2
+			elsif (op = "0010") then -- COMP
 				mux2<="10";
 				mux1<='0';
 				we<=  '0';
 				rw<=  '0';
-				opr<="00";
-				
-			elsif (op = "0100") then -- Posicao 1 para mux2
-				mux2<="01";
-				mux1<='0';
-				we<=  '0';
-				rw<=  '0';
-				opr<="00";
-				
-			elsif (op = "0110") then -- Posicao 0 para mux2
-				mux2<="00";
-				mux1<='0';
+				opr<="10";
+			
+			
+			elsif (op = "0011") then -- JE
+				if(flag='1')then	
+					mux2<="11";
+					mux1<='1';
+					we<=  '0';
+					rw<=  '0';
+					opr<="00";
+				elsif(flag='0') then
+					mux2<="11";
+					mux1<='0';
+					we<=  '0';
+					rw<=  '0';
+					opr<="00";	
+				end if;
+			
+			elsif (op = "0100") then -- JMP
+				mux2<="11";
+				mux1<='1';
 				we<=  '0';
 				rw<=  '0';
 				opr<="00";
 			
-			elsif (op = "0010") then -- Write Enable
+			elsif (op = "0110") then -- COMPI
 				we<=  '1';
 				mux1<='0';
-				mux2<="11";
+				mux2<="00";
+				rw<=  '1';
+				opr<="10";
+
+			elsif (op = "0101") then -- READ
 				rw<=  '0';
+				we<=  '1';
+				mux1<='0';
+				mux2<="00";
 				opr<="00";
 				
---			elsif (op = "1010") then -- Posicao 1 para mux 1
---				we<=  '0';
---				mux1<='0';
---				mux2<='0';
---				rw<=  '0';
---				opr<="00";
-
-			elsif (op = "0001") then 
+			elsif (op = "1100") then -- WRITE
+				opr<="00";
 				rw<=  '1';
 				we<=  '0';
 				mux1<='0';
-				mux2<="11";
-				opr<="00";
-				
---			elsif (op = "0011") then 
---				rw<=  '0';
---				we<=  '0';
---				mux1<='0';
---				mux2<='0';
---				opr<="XX";
-				
-			elsif (op = "1100") then 
-				opr<="01";
-				rw<=  '0';
-				we<=  '0';
-				mux1<='0';
-				mux2<="11";
-				
-			elsif (op = "1011") then 
-				opr<="11";
-				rw<=  '0';
-				we<=  '0';
-				mux1<='0';
-				mux2<="11";
-				
-			elsif (op = "1001") then
-				opr<="10";
-				rw<=  '0';
-				we<=  '0';
-				mux1<='0';
-				mux2<="11";
-				
---			elsif (op = "0000") then
---				opr<="00";
---				rw<=  '0';
---				we<=  '0';
---				mux1<='0';
---				mux2<='0';
---			
+				mux2<="01";
+
 			end if;
 						
 		end if;
