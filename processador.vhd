@@ -22,9 +22,9 @@ entity processador is
 		  
 end entity;
 
--- PALAVRA DE INSTUCAO 21 BITS
+-- 		PALAVRA DE INSTUCAO 21 BITS
 --		OPCODE|REGS1|REGS2|ENDW|IMEDIATO
---		 XXXX | XXX | XXX | XXX| XXXXXX
+--		 XXXX | XXX | XXX | XXX|XXXXXXXX
 
 architecture description of processador is
 
@@ -32,8 +32,6 @@ architecture description of processador is
 	signal ula_instr ,select_mux2 : std_logic_vector(1 downto 0);
 	signal mux1_out,mux2_out,addr_out,s1,s2,ula_out: std_logic_vector(ADDR_WIDTH-1 downto 0) ;
 	signal pc_out : std_logic_vector(ADDR_WIDTH-1 downto 0);
-	--signal e1,e2,endw : std_logic_vector(2 downto 0);
-
 	
 	begin
 	
@@ -101,7 +99,16 @@ architecture description of processador is
 			pc_o=>pc_out
 
 		);
-		
 	
+	process(clk)	
+	begin
+		if (rising_edge(clk)) then
+		
+			rom_addr<=pc_out;
+			
+			
+		
+		end if;
+	end process;
 	
 end description;

@@ -69,8 +69,8 @@ begin
 				we<=  '1';
 				mux1<='0';
 				mux2<="00";
-				rw<=  "01";
-				opr<="10";
+				rw<=  "00";
+				opr<="11";
 
 			elsif (op = "0101") then -- READ
 				rw<=  "10";
@@ -85,6 +85,13 @@ begin
 				we<=  '0';
 				mux1<='0';
 				mux2<="01";
+				
+			elsif (op = "1110") then -- COMPR
+				we<=  '0';
+				mux1<='0';
+				mux2<="01";
+				rw<=  "00";
+				opr<="10";
 
 			end if;
 						
