@@ -18,6 +18,7 @@ architecture description of uc is
 	
 begin
 	resultadoMux1 <= (flag = '1') and (op = "0011");
+	
 	mux1 <= '1' when resultadoMux1 or op = "0100" else '0';
 	
 	muxDataOut <= '1' when op = "1100" else '0';

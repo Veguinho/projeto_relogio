@@ -77,8 +77,8 @@ architecture description of processador is
 	mux3: entity work.mux3
 		port map(
 		  a1=>s1,
-		  a2=>datain(7 downto 0),
-		  a3=>rom_in(7 downto 0),
+		  a0=>datain,
+		  a2=>rom_in(7 downto 0),
 		  sel=>select_mux2,
 		  b=>mux2_out
 				
@@ -86,8 +86,8 @@ architecture description of processador is
 		
 	muxDataOut: entity work.mux2
 	port map(
-			A=>ula_out,
-			B=>s2, 
+			A=>s2,
+			B=>ula_out, 
 			Sel=>muxDOutSel, 
 			Y=>muxDOut_out
 		);
