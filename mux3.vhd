@@ -15,6 +15,5 @@ begin
   with sel select
     b <= a0 when "00",
        a1 when "01",
-       a2 when "10",
-		 a2 when "11";
+       a2 when others;
 end rtl;

@@ -1,0 +1,1709 @@
+$comment
+	File created using the following command:
+		vcd file projeto_relogio.msim.vcd -direction
+$end
+$date
+	Sat Oct  5 17:35:49 2019
+$end
+$version
+	ModelSim Version 10.5b
+$end
+$timescale
+	1ps
+$end
+
+$scope module relogio_vhd_vec_tst $end
+$var wire 1 ! addr [7] $end
+$var wire 1 " addr [6] $end
+$var wire 1 # addr [5] $end
+$var wire 1 $ addr [4] $end
+$var wire 1 % addr [3] $end
+$var wire 1 & addr [2] $end
+$var wire 1 ' addr [1] $end
+$var wire 1 ( addr [0] $end
+$var wire 1 ) clk $end
+$var wire 1 * datain [7] $end
+$var wire 1 + datain [6] $end
+$var wire 1 , datain [5] $end
+$var wire 1 - datain [4] $end
+$var wire 1 . datain [3] $end
+$var wire 1 / datain [2] $end
+$var wire 1 0 datain [1] $end
+$var wire 1 1 datain [0] $end
+$var wire 1 2 dataout [7] $end
+$var wire 1 3 dataout [6] $end
+$var wire 1 4 dataout [5] $end
+$var wire 1 5 dataout [4] $end
+$var wire 1 6 dataout [3] $end
+$var wire 1 7 dataout [2] $end
+$var wire 1 8 dataout [1] $end
+$var wire 1 9 dataout [0] $end
+$var wire 1 : rw [1] $end
+$var wire 1 ; rw [0] $end
+
+$scope module i1 $end
+$var wire 1 < gnd $end
+$var wire 1 = vcc $end
+$var wire 1 > unknown $end
+$var wire 1 ? devoe $end
+$var wire 1 @ devclrn $end
+$var wire 1 A devpor $end
+$var wire 1 B ww_devoe $end
+$var wire 1 C ww_devclrn $end
+$var wire 1 D ww_devpor $end
+$var wire 1 E ww_datain [7] $end
+$var wire 1 F ww_datain [6] $end
+$var wire 1 G ww_datain [5] $end
+$var wire 1 H ww_datain [4] $end
+$var wire 1 I ww_datain [3] $end
+$var wire 1 J ww_datain [2] $end
+$var wire 1 K ww_datain [1] $end
+$var wire 1 L ww_datain [0] $end
+$var wire 1 M ww_clk $end
+$var wire 1 N ww_rw [1] $end
+$var wire 1 O ww_rw [0] $end
+$var wire 1 P ww_dataout [7] $end
+$var wire 1 Q ww_dataout [6] $end
+$var wire 1 R ww_dataout [5] $end
+$var wire 1 S ww_dataout [4] $end
+$var wire 1 T ww_dataout [3] $end
+$var wire 1 U ww_dataout [2] $end
+$var wire 1 V ww_dataout [1] $end
+$var wire 1 W ww_dataout [0] $end
+$var wire 1 X ww_addr [7] $end
+$var wire 1 Y ww_addr [6] $end
+$var wire 1 Z ww_addr [5] $end
+$var wire 1 [ ww_addr [4] $end
+$var wire 1 \ ww_addr [3] $end
+$var wire 1 ] ww_addr [2] $end
+$var wire 1 ^ ww_addr [1] $end
+$var wire 1 _ ww_addr [0] $end
+$var wire 1 ` \datain[0]~input_o\ $end
+$var wire 1 a \datain[7]~input_o\ $end
+$var wire 1 b \datain[6]~input_o\ $end
+$var wire 1 c \datain[5]~input_o\ $end
+$var wire 1 d \datain[4]~input_o\ $end
+$var wire 1 e \datain[3]~input_o\ $end
+$var wire 1 f \datain[2]~input_o\ $end
+$var wire 1 g \datain[1]~input_o\ $end
+$var wire 1 h \rw[0]~output_o\ $end
+$var wire 1 i \rw[1]~output_o\ $end
+$var wire 1 j \dataout[0]~output_o\ $end
+$var wire 1 k \dataout[1]~output_o\ $end
+$var wire 1 l \dataout[2]~output_o\ $end
+$var wire 1 m \dataout[3]~output_o\ $end
+$var wire 1 n \dataout[4]~output_o\ $end
+$var wire 1 o \dataout[5]~output_o\ $end
+$var wire 1 p \dataout[6]~output_o\ $end
+$var wire 1 q \dataout[7]~output_o\ $end
+$var wire 1 r \addr[0]~output_o\ $end
+$var wire 1 s \addr[1]~output_o\ $end
+$var wire 1 t \addr[2]~output_o\ $end
+$var wire 1 u \addr[3]~output_o\ $end
+$var wire 1 v \addr[4]~output_o\ $end
+$var wire 1 w \addr[5]~output_o\ $end
+$var wire 1 x \addr[6]~output_o\ $end
+$var wire 1 y \addr[7]~output_o\ $end
+$var wire 1 z \clk~input_o\ $end
+$var wire 1 { \processador|pc|pc_o[0]~8_combout\ $end
+$var wire 1 | \processador|pc|pc_o[0]~9\ $end
+$var wire 1 } \processador|pc|pc_o[1]~10_combout\ $end
+$var wire 1 ~ \processador|pc|pc_o[1]~11\ $end
+$var wire 1 !! \processador|pc|pc_o[2]~12_combout\ $end
+$var wire 1 "! \processador|pc|pc_o[2]~13\ $end
+$var wire 1 #! \processador|pc|pc_o[3]~14_combout\ $end
+$var wire 1 $! \processador|pc|pc_o[3]~15\ $end
+$var wire 1 %! \processador|pc|pc_o[4]~16_combout\ $end
+$var wire 1 &! \processador|pc|pc_o[4]~17\ $end
+$var wire 1 '! \processador|pc|pc_o[5]~18_combout\ $end
+$var wire 1 (! \processador|pc|pc_o[5]~19\ $end
+$var wire 1 )! \processador|pc|pc_o[6]~20_combout\ $end
+$var wire 1 *! \processador|pc|pc_o[6]~21\ $end
+$var wire 1 +! \processador|pc|pc_o[7]~22_combout\ $end
+$var wire 1 ,! \rom|rom~0_combout\ $end
+$var wire 1 -! \rom|rom~1_combout\ $end
+$var wire 1 .! \rom|rom~2_combout\ $end
+$var wire 1 /! \rom|rom~7_combout\ $end
+$var wire 1 0! \processador|mux3|Mux7~0_combout\ $end
+$var wire 1 1! \processador|ula|resultadoAdd[0]~0_combout\ $end
+$var wire 1 2! \rom|rom~8_combout\ $end
+$var wire 1 3! \processador|ula|Add0~0_combout\ $end
+$var wire 1 4! \rom|rom~9_combout\ $end
+$var wire 1 5! \processador|bancoRegistradores|registrador~84_combout\ $end
+$var wire 1 6! \processador|bancoRegistradores|registrador~20_q\ $end
+$var wire 1 7! \rom|rom~3_combout\ $end
+$var wire 1 8! \rom|rom~4_combout\ $end
+$var wire 1 9! \rom|rom~5_combout\ $end
+$var wire 1 :! \rom|rom~6_combout\ $end
+$var wire 1 ;! \processador|bancoRegistradores|registrador~85_combout\ $end
+$var wire 1 <! \processador|bancoRegistradores|registrador~28_q\ $end
+$var wire 1 =! \processador|bancoRegistradores|registrador~76_combout\ $end
+$var wire 1 >! \processador|muxDataOut|Y[0]~0_combout\ $end
+$var wire 1 ?! \processador|mux3|Mux6~0_combout\ $end
+$var wire 1 @! \processador|ula|resultadoAdd[0]~1\ $end
+$var wire 1 A! \processador|ula|resultadoAdd[1]~2_combout\ $end
+$var wire 1 B! \processador|ula|Add0~1_combout\ $end
+$var wire 1 C! \processador|bancoRegistradores|registrador~29_q\ $end
+$var wire 1 D! \processador|bancoRegistradores|registrador~21_q\ $end
+$var wire 1 E! \processador|bancoRegistradores|registrador~77_combout\ $end
+$var wire 1 F! \processador|muxDataOut|Y[1]~1_combout\ $end
+$var wire 1 G! \processador|mux3|Mux5~0_combout\ $end
+$var wire 1 H! \processador|ula|resultadoAdd[1]~3\ $end
+$var wire 1 I! \processador|ula|resultadoAdd[2]~4_combout\ $end
+$var wire 1 J! \processador|ula|Add0~2_combout\ $end
+$var wire 1 K! \processador|bancoRegistradores|registrador~22_q\ $end
+$var wire 1 L! \processador|bancoRegistradores|registrador~30_q\ $end
+$var wire 1 M! \processador|bancoRegistradores|registrador~78_combout\ $end
+$var wire 1 N! \processador|muxDataOut|Y[2]~2_combout\ $end
+$var wire 1 O! \processador|ula|resultadoAdd[2]~5\ $end
+$var wire 1 P! \processador|ula|resultadoAdd[3]~6_combout\ $end
+$var wire 1 Q! \processador|ula|Add0~3_combout\ $end
+$var wire 1 R! \processador|bancoRegistradores|registrador~31_q\ $end
+$var wire 1 S! \processador|bancoRegistradores|registrador~23_q\ $end
+$var wire 1 T! \processador|bancoRegistradores|registrador~79_combout\ $end
+$var wire 1 U! \processador|muxDataOut|Y[3]~3_combout\ $end
+$var wire 1 V! \processador|ula|resultadoAdd[3]~7\ $end
+$var wire 1 W! \processador|ula|resultadoAdd[4]~8_combout\ $end
+$var wire 1 X! \processador|ula|Add0~4_combout\ $end
+$var wire 1 Y! \processador|bancoRegistradores|registrador~24_q\ $end
+$var wire 1 Z! \processador|bancoRegistradores|registrador~32_q\ $end
+$var wire 1 [! \processador|bancoRegistradores|registrador~80_combout\ $end
+$var wire 1 \! \processador|muxDataOut|Y[4]~4_combout\ $end
+$var wire 1 ]! \processador|ula|resultadoAdd[4]~9\ $end
+$var wire 1 ^! \processador|ula|resultadoAdd[5]~10_combout\ $end
+$var wire 1 _! \processador|ula|Add0~5_combout\ $end
+$var wire 1 `! \processador|bancoRegistradores|registrador~33_q\ $end
+$var wire 1 a! \processador|bancoRegistradores|registrador~25_q\ $end
+$var wire 1 b! \processador|bancoRegistradores|registrador~81_combout\ $end
+$var wire 1 c! \processador|muxDataOut|Y[5]~5_combout\ $end
+$var wire 1 d! \processador|ula|resultadoAdd[5]~11\ $end
+$var wire 1 e! \processador|ula|resultadoAdd[6]~12_combout\ $end
+$var wire 1 f! \processador|ula|Add0~6_combout\ $end
+$var wire 1 g! \processador|bancoRegistradores|registrador~26_q\ $end
+$var wire 1 h! \processador|bancoRegistradores|registrador~34_q\ $end
+$var wire 1 i! \processador|bancoRegistradores|registrador~82_combout\ $end
+$var wire 1 j! \processador|muxDataOut|Y[6]~6_combout\ $end
+$var wire 1 k! \processador|ula|resultadoAdd[6]~13\ $end
+$var wire 1 l! \processador|ula|resultadoAdd[7]~14_combout\ $end
+$var wire 1 m! \processador|ula|Add0~7_combout\ $end
+$var wire 1 n! \processador|bancoRegistradores|registrador~35_q\ $end
+$var wire 1 o! \processador|bancoRegistradores|registrador~27_q\ $end
+$var wire 1 p! \processador|bancoRegistradores|registrador~83_combout\ $end
+$var wire 1 q! \processador|muxDataOut|Y[7]~7_combout\ $end
+$var wire 1 r! \rom|rom~10_combout\ $end
+$var wire 1 s! \rom|rom~11_combout\ $end
+$var wire 1 t! \rom|rom~12_combout\ $end
+$var wire 1 u! \processador|pc|pc_o\ [7] $end
+$var wire 1 v! \processador|pc|pc_o\ [6] $end
+$var wire 1 w! \processador|pc|pc_o\ [5] $end
+$var wire 1 x! \processador|pc|pc_o\ [4] $end
+$var wire 1 y! \processador|pc|pc_o\ [3] $end
+$var wire 1 z! \processador|pc|pc_o\ [2] $end
+$var wire 1 {! \processador|pc|pc_o\ [1] $end
+$var wire 1 |! \processador|pc|pc_o\ [0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0)
+0<
+1=
+x>
+1?
+1@
+1A
+1B
+1C
+1D
+0M
+0`
+0a
+0b
+0c
+0d
+0e
+0f
+0g
+0h
+0i
+1j
+0k
+1l
+0m
+1n
+0o
+1p
+0q
+1r
+0s
+1t
+0u
+1v
+0w
+1x
+0y
+0z
+1{
+0|
+0}
+1~
+0!!
+0"!
+0#!
+1$!
+0%!
+0&!
+0'!
+1(!
+0)!
+0*!
+0+!
+1,!
+0-!
+0.!
+0/!
+10!
+11!
+02!
+13!
+14!
+05!
+06!
+07!
+08!
+09!
+0:!
+0;!
+0<!
+0=!
+1>!
+0?!
+0@!
+0A!
+0B!
+0C!
+0D!
+0E!
+0F!
+1G!
+1H!
+1I!
+1J!
+0K!
+0L!
+0M!
+1N!
+0O!
+0P!
+0Q!
+0R!
+0S!
+0T!
+0U!
+1V!
+1W!
+1X!
+0Y!
+0Z!
+0[!
+1\!
+0]!
+0^!
+0_!
+0`!
+0a!
+0b!
+0c!
+1d!
+1e!
+1f!
+0g!
+0h!
+0i!
+1j!
+0k!
+0l!
+0m!
+0n!
+0o!
+0p!
+0q!
+1r!
+0s!
+1t!
+0*
+0+
+0,
+0-
+0.
+0/
+00
+01
+0E
+0F
+0G
+0H
+0I
+0J
+0K
+0L
+0N
+0O
+0P
+1Q
+0R
+1S
+0T
+1U
+0V
+1W
+0X
+1Y
+0Z
+1[
+0\
+1]
+0^
+1_
+0u!
+0v!
+0w!
+0x!
+0y!
+0z!
+0{!
+0|!
+0!
+1"
+0#
+1$
+0%
+1&
+0'
+1(
+02
+13
+04
+15
+06
+17
+08
+19
+0:
+0;
+$end
+#10000
+1)
+1M
+1z
+1|!
+0{
+1|
+1/!
+19!
+1?!
+0G!
+1s!
+0t!
+0I!
+0J!
+0W!
+0X!
+0e!
+0f!
+1A!
+1B!
+1P!
+1Q!
+1^!
+1_!
+1l!
+1m!
+00!
+0r!
+1}
+01!
+03!
+1q!
+1c!
+1U!
+1F!
+0j!
+0\!
+0N!
+0t
+0v
+0x
+1s
+1u
+1w
+1y
+0>!
+0]
+0[
+0Y
+1^
+1\
+1Z
+1X
+0r
+1'
+0&
+1%
+0$
+1#
+0"
+1!
+0_
+0l
+0n
+0p
+1k
+1m
+1o
+1q
+0(
+0U
+0S
+0Q
+1V
+1T
+1R
+1P
+0j
+18
+07
+16
+05
+14
+03
+12
+0W
+09
+#20000
+0)
+0M
+0z
+#30000
+1)
+1M
+1z
+0|!
+1{!
+0}
+0~
+12!
+1:!
+1{
+0|
+0/!
+17!
+09!
+0?!
+0s!
+0A!
+0P!
+0^!
+0l!
+0:!
+18!
+10!
+1r!
+1}
+1~
+15!
+1!!
+0!!
+11!
+0m!
+0_!
+0Q!
+0B!
+0s
+0u
+0w
+0y
+0F!
+0U!
+0c!
+0q!
+13!
+0^
+0\
+0Z
+0X
+1r
+0'
+0%
+0#
+0!
+1>!
+1_
+1(
+0q
+0o
+0m
+0k
+0P
+0R
+0T
+0V
+1j
+08
+06
+04
+02
+1W
+19
+#40000
+0)
+0M
+0z
+#50000
+1)
+1M
+1z
+1|!
+16!
+1=!
+0{
+1|
+05!
+07!
+19!
+1;!
+1:!
+08!
+0}
+0~
+01!
+1@!
+1A!
+03!
+1!!
+0=!
+11!
+0@!
+0>!
+1B!
+1F!
+0A!
+13!
+1>!
+0B!
+0j
+0F!
+0W
+1k
+09
+1V
+1j
+18
+1W
+0k
+19
+0V
+08
+#60000
+0)
+0M
+0z
+#70000
+1)
+1M
+1z
+0|!
+0{!
+1z!
+1<!
+1=!
+0!!
+1"!
+04!
+1}
+1~
+02!
+0:!
+1{
+0|
+1-!
+1/!
+15!
+17!
+09!
+0;!
+1G!
+1t!
+1I!
+1W!
+1e!
+18!
+0r!
+1.!
+00!
+0}
+0=!
+1J!
+1X!
+1f!
+1!!
+0"!
+05!
+0G!
+0t!
+1#!
+01!
+1@!
+1A!
+0I!
+0W!
+0e!
+0#!
+0@!
+03!
+0>!
+1=!
+0f!
+0X!
+0J!
+1t
+1v
+1x
+11!
+1>!
+0A!
+1]
+1[
+1Y
+0t
+0v
+0x
+1h
+0r
+1&
+1$
+1"
+0]
+0[
+0Y
+1O
+0_
+0j
+0(
+0&
+0$
+0"
+1;
+0W
+1j
+09
+1W
+19
+#80000
+0)
+0M
+0z
+#90000
+1)
+1M
+1z
+1|!
+0{
+1|
+0-!
+07!
+19!
+08!
+0.!
+1}
+0>!
+0=!
+01!
+0h
+0O
+0j
+0;
+0W
+09
+#100000
+0)
+0M
+0z
+#110000
+1)
+1M
+1z
+0|!
+1{!
+0}
+0~
+1{
+0|
+09!
+1}
+1~
+0!!
+1"!
+1#!
+1!!
+0"!
+0#!
+#120000
+0)
+0M
+0z
+#130000
+1)
+1M
+1z
+1|!
+0{
+1|
+19!
+0}
+0~
+0!!
+1"!
+1#!
+#140000
+0)
+0M
+0z
+#150000
+1)
+1M
+1z
+0|!
+0{!
+0z!
+1y!
+0#!
+0$!
+1!!
+0"!
+1}
+1~
+1{
+0|
+09!
+0}
+0!!
+1#!
+1$!
+1%!
+0%!
+#160000
+0)
+0M
+0z
+#170000
+1)
+1M
+1z
+1|!
+0{
+1|
+1}
+#180000
+0)
+0M
+0z
+#190000
+1)
+1M
+1z
+0|!
+1{!
+0}
+0~
+1{
+0|
+1}
+1~
+1!!
+0!!
+#200000
+0)
+0M
+0z
+#210000
+1)
+1M
+1z
+1|!
+0{
+1|
+0}
+0~
+1!!
+#220000
+0)
+0M
+0z
+#230000
+1)
+1M
+1z
+0|!
+0{!
+1z!
+0!!
+1"!
+1}
+1~
+1{
+0|
+1-!
+0}
+1!!
+0"!
+0#!
+0$!
+1%!
+1#!
+1$!
+0%!
+#240000
+0)
+0M
+0z
+#250000
+1)
+1M
+1z
+1|!
+0{
+1|
+0-!
+1}
+#260000
+0)
+0M
+0z
+#270000
+1)
+1M
+1z
+0|!
+1{!
+0}
+0~
+1{
+0|
+1}
+1~
+0!!
+1"!
+0#!
+0$!
+1!!
+0"!
+1#!
+1$!
+1%!
+0%!
+#280000
+0)
+0M
+0z
+#290000
+1)
+1M
+1z
+1|!
+0{
+1|
+0}
+0~
+0!!
+1"!
+0#!
+0$!
+1%!
+#300000
+0)
+0M
+0z
+#310000
+1)
+1M
+1z
+0|!
+0{!
+0z!
+0y!
+1x!
+0%!
+1&!
+0,!
+1#!
+1$!
+1!!
+0"!
+14!
+1}
+1~
+1{
+0|
+0/!
+0}
+0!!
+1G!
+1t!
+0#!
+1%!
+0&!
+04!
+1'!
+0G!
+0t!
+0'!
+1I!
+1J!
+1W!
+1X!
+1e!
+1f!
+1j!
+1\!
+1N!
+0I!
+0J!
+0W!
+0X!
+0e!
+0f!
+1t
+1v
+1x
+0j!
+0\!
+0N!
+1]
+1[
+1Y
+0t
+0v
+0x
+1&
+1$
+1"
+0]
+0[
+0Y
+1l
+1n
+1p
+0&
+0$
+0"
+1U
+1S
+1Q
+0l
+0n
+0p
+17
+15
+13
+0U
+0S
+0Q
+07
+05
+03
+#320000
+0)
+0M
+0z
+#330000
+1)
+1M
+1z
+1|!
+0{
+1|
+1/!
+19!
+1}
+#340000
+0)
+0M
+0z
+#350000
+1)
+1M
+1z
+0|!
+1{!
+0}
+0~
+1{
+0|
+0/!
+17!
+09!
+1}
+1~
+1!!
+0!!
+#360000
+0)
+0M
+0z
+#370000
+1)
+1M
+1z
+1|!
+0{
+1|
+07!
+19!
+0}
+0~
+1!!
+#380000
+0)
+0M
+0z
+#390000
+1)
+1M
+1z
+0|!
+0{!
+1z!
+0!!
+1"!
+1}
+1~
+1{
+0|
+1-!
+1/!
+17!
+09!
+0}
+1!!
+0"!
+1#!
+0#!
+#400000
+0)
+0M
+0z
+#410000
+1)
+1M
+1z
+1|!
+0{
+1|
+0-!
+07!
+19!
+1}
+#420000
+0)
+0M
+0z
+#430000
+1)
+1M
+1z
+0|!
+1{!
+0}
+0~
+1{
+0|
+09!
+1}
+1~
+0!!
+1"!
+1#!
+1!!
+0"!
+0#!
+#440000
+0)
+0M
+0z
+#450000
+1)
+1M
+1z
+1|!
+0{
+1|
+19!
+0}
+0~
+0!!
+1"!
+1#!
+#460000
+0)
+0M
+0z
+#470000
+1)
+1M
+1z
+0|!
+0{!
+0z!
+1y!
+0#!
+0$!
+1!!
+0"!
+1}
+1~
+1{
+0|
+09!
+0}
+0!!
+1#!
+1$!
+0%!
+1&!
+1'!
+1%!
+0&!
+0'!
+#480000
+0)
+0M
+0z
+#490000
+1)
+1M
+1z
+1|!
+0{
+1|
+1}
+#500000
+0)
+0M
+0z
+#510000
+1)
+1M
+1z
+0|!
+1{!
+0}
+0~
+1{
+0|
+1}
+1~
+1!!
+0!!
+#520000
+0)
+0M
+0z
+#530000
+1)
+1M
+1z
+1|!
+0{
+1|
+0}
+0~
+1!!
+#540000
+0)
+0M
+0z
+#550000
+1)
+1M
+1z
+0|!
+0{!
+1z!
+0!!
+1"!
+1}
+1~
+1{
+0|
+1-!
+0}
+1!!
+0"!
+0#!
+0$!
+0%!
+1&!
+1#!
+1$!
+1%!
+0&!
+1'!
+0'!
+#560000
+0)
+0M
+0z
+#570000
+1)
+1M
+1z
+1|!
+0{
+1|
+0-!
+1}
+#580000
+0)
+0M
+0z
+#590000
+1)
+1M
+1z
+0|!
+1{!
+0}
+0~
+1{
+0|
+1}
+1~
+0!!
+1"!
+0#!
+0$!
+1!!
+0"!
+1#!
+1$!
+0%!
+1&!
+1'!
+1%!
+0&!
+0'!
+#600000
+0)
+0M
+0z
+#610000
+1)
+1M
+1z
+1|!
+0{
+1|
+0}
+0~
+0!!
+1"!
+0#!
+0$!
+0%!
+1&!
+1'!
+#620000
+0)
+0M
+0z
+#630000
+1)
+1M
+1z
+0|!
+0{!
+0z!
+0y!
+0x!
+1w!
+0'!
+0(!
+1%!
+0&!
+1#!
+1$!
+1!!
+0"!
+1}
+1~
+1{
+0|
+0/!
+0}
+0!!
+0#!
+0%!
+1'!
+1(!
+1)!
+0)!
+#640000
+0)
+0M
+0z
+#650000
+1)
+1M
+1z
+1|!
+0{
+1|
+1/!
+19!
+1}
+#660000
+0)
+0M
+0z
+#670000
+1)
+1M
+1z
+0|!
+1{!
+0}
+0~
+1{
+0|
+0/!
+17!
+09!
+1}
+1~
+1!!
+0!!
+#680000
+0)
+0M
+0z
+#690000
+1)
+1M
+1z
+1|!
+0{
+1|
+07!
+19!
+0}
+0~
+1!!
+#700000
+0)
+0M
+0z
+#710000
+1)
+1M
+1z
+0|!
+0{!
+1z!
+0!!
+1"!
+1}
+1~
+1{
+0|
+1-!
+1/!
+17!
+09!
+0}
+1!!
+0"!
+1#!
+0#!
+#720000
+0)
+0M
+0z
+#730000
+1)
+1M
+1z
+1|!
+0{
+1|
+0-!
+07!
+19!
+1}
+#740000
+0)
+0M
+0z
+#750000
+1)
+1M
+1z
+0|!
+1{!
+0}
+0~
+1{
+0|
+09!
+1}
+1~
+0!!
+1"!
+1#!
+1!!
+0"!
+0#!
+#760000
+0)
+0M
+0z
+#770000
+1)
+1M
+1z
+1|!
+0{
+1|
+19!
+0}
+0~
+0!!
+1"!
+1#!
+#780000
+0)
+0M
+0z
+#790000
+1)
+1M
+1z
+0|!
+0{!
+0z!
+1y!
+0#!
+0$!
+1!!
+0"!
+1}
+1~
+1{
+0|
+09!
+0}
+0!!
+1#!
+1$!
+1%!
+0%!
+#800000
+0)
+0M
+0z
+#810000
+1)
+1M
+1z
+1|!
+0{
+1|
+1}
+#820000
+0)
+0M
+0z
+#830000
+1)
+1M
+1z
+0|!
+1{!
+0}
+0~
+1{
+0|
+1}
+1~
+1!!
+0!!
+#840000
+0)
+0M
+0z
+#850000
+1)
+1M
+1z
+1|!
+0{
+1|
+0}
+0~
+1!!
+#860000
+0)
+0M
+0z
+#870000
+1)
+1M
+1z
+0|!
+0{!
+1z!
+0!!
+1"!
+1}
+1~
+1{
+0|
+1-!
+0}
+1!!
+0"!
+0#!
+0$!
+1%!
+1#!
+1$!
+0%!
+#880000
+0)
+0M
+0z
+#890000
+1)
+1M
+1z
+1|!
+0{
+1|
+0-!
+1}
+#900000
+0)
+0M
+0z
+#910000
+1)
+1M
+1z
+0|!
+1{!
+0}
+0~
+1{
+0|
+1}
+1~
+0!!
+1"!
+0#!
+0$!
+1!!
+0"!
+1#!
+1$!
+1%!
+0%!
+#920000
+0)
+0M
+0z
+#930000
+1)
+1M
+1z
+1|!
+0{
+1|
+0}
+0~
+0!!
+1"!
+0#!
+0$!
+1%!
+#940000
+0)
+0M
+0z
+#950000
+1)
+1M
+1z
+0|!
+0{!
+0z!
+0y!
+1x!
+0%!
+1&!
+1#!
+1$!
+1!!
+0"!
+1}
+1~
+1{
+0|
+0/!
+0}
+0!!
+0#!
+1%!
+0&!
+0'!
+0(!
+1)!
+1'!
+1(!
+0)!
+#960000
+0)
+0M
+0z
+#970000
+1)
+1M
+1z
+1|!
+0{
+1|
+1/!
+19!
+1}
+#980000
+0)
+0M
+0z
+#990000
+1)
+1M
+1z
+0|!
+1{!
+0}
+0~
+1{
+0|
+0/!
+17!
+09!
+1}
+1~
+1!!
+0!!
+#1000000

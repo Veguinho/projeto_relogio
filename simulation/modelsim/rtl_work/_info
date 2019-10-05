@@ -8,42 +8,63 @@ z2
 !i10f 100
 cModel Technology
 Z0 d/home/parallels/intelFPGA_lite/17.1/projeto_relogio/simulation/modelsim
-Econversorhex7seg
-Z1 w1566990852
-Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Emux3
+w1570216725
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
 R0
-Z4 8/home/parallels/intelFPGA_lite/17.1/projeto_relogio/conversorHex7Seg.vhd
-Z5 F/home/parallels/intelFPGA_lite/17.1/projeto_relogio/conversorHex7Seg.vhd
+8/home/parallels/intelFPGA_lite/17.1/projeto_relogio/mux3.vhd
+F/home/parallels/intelFPGA_lite/17.1/projeto_relogio/mux3.vhd
+l0
+L3
+VZ8AANAWfYDf`=mCL?O6nL0
+!s100 O:hXgNYO=6Sa[k>^AeO5B2
+Z3 OV;C;10.5b;63
+31
+Z4 !s110 1570220037
+!i10b 1
+Z5 !s108 1570220037.000000
+!s90 -reportprogress|300|-93|-work|work|/home/parallels/intelFPGA_lite/17.1/projeto_relogio/mux3.vhd|
+!s107 /home/parallels/intelFPGA_lite/17.1/projeto_relogio/mux3.vhd|
+!i113 1
+Z6 o-93 -work work
+Z7 tExplicit 1 CvgOpt 0
+Epc
+Z8 w1569593705
+R1
+R2
+R0
+Z9 8/home/parallels/intelFPGA_lite/17.1/projeto_relogio/pc.vhd
+Z10 F/home/parallels/intelFPGA_lite/17.1/projeto_relogio/pc.vhd
 l0
 L4
-VGL]hXlLET]9Z2C[PI5<_c3
-!s100 ?13>eGA?X;56Da@2Q4>>O3
-Z6 OV;C;10.5b;63
-31
-Z7 !s110 1566991538
-!i10b 1
-Z8 !s108 1566991538.000000
-Z9 !s90 -reportprogress|300|-93|-work|work|/home/parallels/intelFPGA_lite/17.1/projeto_relogio/conversorHex7Seg.vhd|
-Z10 !s107 /home/parallels/intelFPGA_lite/17.1/projeto_relogio/conversorHex7Seg.vhd|
-!i113 1
-Z11 o-93 -work work
-Z12 tExplicit 1 CvgOpt 0
-Acomportamento
-R2
+V9ZmY24RX=Wf7OJ`mF;Fhh3
+!s100 k:L;o1WJX;5hcNI9bP@ZX2
 R3
-DEx4 work 16 conversorhex7seg 0 22 GL]hXlLET]9Z2C[PI5<_c3
-l34
-L17
-VXUHi9a:1h?E`bC6XXBlDV0
-!s100 9QE=jVe5kS46Z63jHO`PK1
-R6
 31
-R7
+R4
 !i10b 1
-R8
-R9
-R10
+R5
+Z11 !s90 -reportprogress|300|-93|-work|work|/home/parallels/intelFPGA_lite/17.1/projeto_relogio/pc.vhd|
+Z12 !s107 /home/parallels/intelFPGA_lite/17.1/projeto_relogio/pc.vhd|
 !i113 1
+R6
+R7
+Apc1
+R1
+R2
+DEx4 work 2 pc 0 22 9ZmY24RX=Wf7OJ`mF;Fhh3
+l21
+L20
+VgF2HD^N;mCA3aJGV9IkXL3
+!s100 `5UccnoU>GmbjDNz:6WeE3
+R3
+31
+R4
+!i10b 1
+R5
 R11
 R12
+!i113 1
+R6
+R7

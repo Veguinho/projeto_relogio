@@ -23,24 +23,11 @@ generic (DATA_WIDTH : natural := 8);
 	);
 end entity;
 
-architecture muxElse of mux2 is
-
-
-begin
-
-	Y <= A when Sel = '0' else
-			B;
-
-end architecture;
-
-
 architecture muxSelect of mux2 is
 
-
 begin
 
-	with Sel select Y <=
-		A when '0',
-		B when '1';
+	Y <= A when Sel = '0' else B;
 
 end architecture;
+

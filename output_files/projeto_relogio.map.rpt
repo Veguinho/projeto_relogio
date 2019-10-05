@@ -1,5 +1,5 @@
 Analysis & Synthesis report for projeto_relogio
-Wed Aug 28 09:25:14 2019
+Sat Oct  5 17:35:23 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -13,10 +13,20 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Parameter Settings for User Entity Instance: Top-level Entity: |relogio
+ 11. Parameter Settings for User Entity Instance: processador:processador
+ 12. Parameter Settings for User Entity Instance: processador:processador|ULA:ula
+ 13. Parameter Settings for User Entity Instance: processador:processador|mux2:mux2
+ 14. Parameter Settings for User Entity Instance: processador:processador|somadorGenerico:somadorGenerico
+ 15. Parameter Settings for User Entity Instance: processador:processador|mux2:muxDataOut
+ 16. Parameter Settings for User Entity Instance: processador:processador|bancoRegistradores:bancoRegistradores
+ 17. Parameter Settings for User Entity Instance: processador:processador|PC:pc
+ 18. Parameter Settings for User Entity Instance: rom:rom
+ 19. Post-Synthesis Netlist Statistics for Top Partition
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
 
 
 
@@ -42,16 +52,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Aug 28 09:25:14 2019       ;
+; Analysis & Synthesis Status        ; Successful - Sat Oct  5 17:35:23 2019       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; projeto_relogio                             ;
-; Top-level Entity Name              ; conversorHex7Seg                            ;
+; Top-level Entity Name              ; relogio                                     ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 14                                          ;
-;     Total combinational functions  ; 14                                          ;
-;     Dedicated logic registers      ; 0                                           ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 14                                          ;
+; Total logic elements               ; 66                                          ;
+;     Total combinational functions  ; 58                                          ;
+;     Dedicated logic registers      ; 24                                          ;
+; Total registers                    ; 24                                          ;
+; Total pins                         ; 27                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -65,8 +75,11 @@ refer to the applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                                      ; conversorHex7Seg   ; projeto_relogio    ;
+; Top-level entity name                                                      ; relogio            ; projeto_relogio    ;
 ; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Maximum processors allowed for parallel compilation                        ; 2                  ;                    ;
+; VHDL Show LMF Mapping Messages                                             ; Off                ;                    ;
+; VHDL Version                                                               ; VHDL_2008          ; VHDL_1993          ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
 ; Enable compact report table                                                ; Off                ; Off                ;
@@ -75,7 +88,6 @@ refer to the applicable agreement for further details.
 ; Preserve fewer node names                                                  ; On                 ; On                 ;
 ; Intel FPGA IP Evaluation Mode                                              ; Enable             ; Enable             ;
 ; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
-; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
 ; State Machine Processing                                                   ; Auto               ; Auto               ;
 ; Safe State Machine                                                         ; Off                ; Off                ;
 ; Extract Verilog State Machines                                             ; On                 ; On                 ;
@@ -154,62 +166,137 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                    ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                             ; Library ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------+---------+
-; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; /home/parallels/intelFPGA_lite/17.1/projeto_relogio/conversorHex7Seg.vhd ;         ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                      ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
+; relogio.vhd                      ; yes             ; User VHDL File  ; /home/parallels/intelFPGA_lite/17.1/projeto_relogio/relogio.vhd            ;         ;
+; pc.vhd                           ; yes             ; User VHDL File  ; /home/parallels/intelFPGA_lite/17.1/projeto_relogio/pc.vhd                 ;         ;
+; mux3.vhd                         ; yes             ; User VHDL File  ; /home/parallels/intelFPGA_lite/17.1/projeto_relogio/mux3.vhd               ;         ;
+; processador.vhd                  ; yes             ; User VHDL File  ; /home/parallels/intelFPGA_lite/17.1/projeto_relogio/processador.vhd        ;         ;
+; rom.vhd                          ; yes             ; User VHDL File  ; /home/parallels/intelFPGA_lite/17.1/projeto_relogio/rom.vhd                ;         ;
+; ula.vhd                          ; yes             ; User VHDL File  ; /home/parallels/intelFPGA_lite/17.1/projeto_relogio/ula.vhd                ;         ;
+; somadorGenerico.vhd              ; yes             ; User VHDL File  ; /home/parallels/intelFPGA_lite/17.1/projeto_relogio/somadorGenerico.vhd    ;         ;
+; mux2.vhd                         ; yes             ; User VHDL File  ; /home/parallels/intelFPGA_lite/17.1/projeto_relogio/mux2.vhd               ;         ;
+; bancoRegistradores.vhd           ; yes             ; User VHDL File  ; /home/parallels/intelFPGA_lite/17.1/projeto_relogio/bancoRegistradores.vhd ;         ;
+; uc.vhd                           ; yes             ; User VHDL File  ; /home/parallels/intelFPGA_lite/17.1/projeto_relogio/uc.vhd                 ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                    ;
-+---------------------------------------------+------------------+
-; Resource                                    ; Usage            ;
-+---------------------------------------------+------------------+
-; Estimated Total logic elements              ; 14               ;
-;                                             ;                  ;
-; Total combinational functions               ; 14               ;
-; Logic element usage by number of LUT inputs ;                  ;
-;     -- 4 input functions                    ; 14               ;
-;     -- 3 input functions                    ; 0                ;
-;     -- <=2 input functions                  ; 0                ;
-;                                             ;                  ;
-; Logic elements by mode                      ;                  ;
-;     -- normal mode                          ; 14               ;
-;     -- arithmetic mode                      ; 0                ;
-;                                             ;                  ;
-; Total registers                             ; 0                ;
-;     -- Dedicated logic registers            ; 0                ;
-;     -- I/O registers                        ; 0                ;
-;                                             ;                  ;
-; I/O pins                                    ; 14               ;
-;                                             ;                  ;
-; Embedded Multiplier 9-bit elements          ; 0                ;
-;                                             ;                  ;
-; Maximum fan-out node                        ; dadoHex[2]~input ;
-; Maximum fan-out                             ; 7                ;
-; Total fan-out                               ; 77               ;
-; Average fan-out                             ; 1.83             ;
-+---------------------------------------------+------------------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 66        ;
+;                                             ;           ;
+; Total combinational functions               ; 58        ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 16        ;
+;     -- 3 input functions                    ; 30        ;
+;     -- <=2 input functions                  ; 12        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 44        ;
+;     -- arithmetic mode                      ; 14        ;
+;                                             ;           ;
+; Total registers                             ; 24        ;
+;     -- Dedicated logic registers            ; 24        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 27        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 24        ;
+; Total fan-out                               ; 285       ;
+; Average fan-out                             ; 2.10      ;
++---------------------------------------------+-----------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                           ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+------------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name      ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+------------------+--------------+
-; |conversorHex7Seg          ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 14   ; 0            ; |conversorHex7Seg   ; conversorHex7Seg ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                   ;
++-----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node                    ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                    ; Entity Name        ; Library Name ;
++-----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------+--------------------+--------------+
+; |relogio                                      ; 58 (0)              ; 24 (0)                    ; 0           ; 0            ; 0       ; 0         ; 27   ; 0            ; |relogio                                                               ; relogio            ; work         ;
+;    |processador:processador|                  ; 45 (0)              ; 24 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|processador:processador                                       ; processador        ; work         ;
+;       |PC:pc|                                 ; 8 (8)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|processador:processador|PC:pc                                 ; PC                 ; work         ;
+;       |ULA:ula|                               ; 16 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|processador:processador|ULA:ula                               ; ULA                ; work         ;
+;       |bancoRegistradores:bancoRegistradores| ; 10 (10)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|processador:processador|bancoRegistradores:bancoRegistradores ; bancoRegistradores ; work         ;
+;       |mux2:muxDataOut|                       ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|processador:processador|mux2:muxDataOut                       ; mux2               ; work         ;
+;       |mux3:mux3|                             ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|processador:processador|mux3:mux3                             ; mux3               ; work         ;
+;    |rom:rom|                                  ; 13 (13)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|rom:rom                                                       ; rom                ; work         ;
++-----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                         ;
++------------------------------------------------------------------------------+---------------------------------------------+
+; Register name                                                                ; Reason for Removal                          ;
++------------------------------------------------------------------------------+---------------------------------------------+
+; processador:processador|ULA:ula|FLAG                                         ; Lost fanout                                 ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~44 ; Lost fanout                                 ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~45 ; Lost fanout                                 ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~46 ; Lost fanout                                 ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~47 ; Lost fanout                                 ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~48 ; Lost fanout                                 ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~49 ; Lost fanout                                 ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~50 ; Lost fanout                                 ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~51 ; Lost fanout                                 ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~52 ; Lost fanout                                 ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~53 ; Lost fanout                                 ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~54 ; Lost fanout                                 ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~55 ; Lost fanout                                 ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~56 ; Lost fanout                                 ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~57 ; Lost fanout                                 ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~58 ; Lost fanout                                 ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~59 ; Lost fanout                                 ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~60 ; Lost fanout                                 ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~61 ; Lost fanout                                 ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~62 ; Lost fanout                                 ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~63 ; Lost fanout                                 ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~64 ; Lost fanout                                 ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~65 ; Lost fanout                                 ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~66 ; Lost fanout                                 ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~67 ; Lost fanout                                 ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~68 ; Lost fanout                                 ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~69 ; Lost fanout                                 ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~70 ; Lost fanout                                 ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~71 ; Lost fanout                                 ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~72 ; Lost fanout                                 ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~73 ; Lost fanout                                 ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~74 ; Lost fanout                                 ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~75 ; Lost fanout                                 ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~12 ; Stuck at GND due to stuck port clock_enable ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~36 ; Stuck at GND due to stuck port clock_enable ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~13 ; Stuck at GND due to stuck port clock_enable ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~37 ; Stuck at GND due to stuck port clock_enable ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~14 ; Stuck at GND due to stuck port clock_enable ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~38 ; Stuck at GND due to stuck port clock_enable ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~15 ; Stuck at GND due to stuck port clock_enable ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~39 ; Stuck at GND due to stuck port clock_enable ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~16 ; Stuck at GND due to stuck port clock_enable ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~40 ; Stuck at GND due to stuck port clock_enable ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~17 ; Stuck at GND due to stuck port clock_enable ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~41 ; Stuck at GND due to stuck port clock_enable ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~18 ; Stuck at GND due to stuck port clock_enable ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~42 ; Stuck at GND due to stuck port clock_enable ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~19 ; Stuck at GND due to stuck port clock_enable ;
+; processador:processador|bancoRegistradores:bancoRegistradores|registrador~43 ; Stuck at GND due to stuck port clock_enable ;
+; Total Number of Removed Registers = 49                                       ;                                             ;
++------------------------------------------------------------------------------+---------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -217,14 +304,112 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 24    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 16    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |relogio ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; word           ; 21    ; Signed Integer                                 ;
+; dados          ; 8     ; Signed Integer                                 ;
+; addr_width     ; 8     ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processador:processador ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; rom_data_width ; 21    ; Signed Integer                              ;
+; addr_width     ; 8     ; Signed Integer                              ;
+; data_width     ; 8     ; Signed Integer                              ;
+; rom_addr_w     ; 8     ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processador:processador|ULA:ula ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; addr           ; 8     ; Signed Integer                                      ;
+; op_code        ; 2     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processador:processador|mux2:mux2 ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; data_width     ; 8     ; Signed Integer                                        ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processador:processador|somadorGenerico:somadorGenerico ;
++----------------+-------+-----------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                        ;
++----------------+-------+-----------------------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                                              ;
++----------------+-------+-----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processador:processador|mux2:muxDataOut ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; data_width     ; 8     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processador:processador|bancoRegistradores:bancoRegistradores ;
++---------------------+-------+------------------------------------------------------------------------------+
+; Parameter Name      ; Value ; Type                                                                         ;
++---------------------+-------+------------------------------------------------------------------------------+
+; larguradados        ; 8     ; Signed Integer                                                               ;
+; larguraendbancoregs ; 3     ; Signed Integer                                                               ;
++---------------------+-------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processador:processador|PC:pc ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; addr           ; 8     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rom:rom ;
++----------------+-------+-----------------------------+
+; Parameter Name ; Value ; Type                        ;
++----------------+-------+-----------------------------+
+; data_width     ; 21    ; Signed Integer              ;
+; addr_width     ; 8     ; Signed Integer              ;
++----------------+-------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------+
@@ -232,13 +417,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 14                          ;
-; cycloneiii_lcell_comb ; 14                          ;
-;     normal            ; 14                          ;
-;         4 data inputs ; 14                          ;
+; boundary_port         ; 27                          ;
+; cycloneiii_ff         ; 24                          ;
+;     ENA               ; 16                          ;
+;     plain             ; 8                           ;
+; cycloneiii_lcell_comb ; 59                          ;
+;     arith             ; 14                          ;
+;         2 data inputs ; 7                           ;
+;         3 data inputs ; 7                           ;
+;     normal            ; 45                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 23                          ;
+;         4 data inputs ; 16                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.86                        ;
+; Max LUT depth         ; 6.70                        ;
+; Average LUT depth     ; 5.02                        ;
 +-----------------------+-----------------------------+
 
 
@@ -257,27 +452,86 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Wed Aug 28 09:25:04 2019
+    Info: Processing started: Sat Oct  5 17:35:11 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off projeto_relogio -c projeto_relogio
-Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (20032): Parallel compilation is enabled and will use up to 2 processors
+Info (12021): Found 2 design units, including 1 entities, in source file relogio.vhd
+    Info (12022): Found design unit 1: relogio-relogio_top File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/relogio.vhd Line: 23
+    Info (12023): Found entity 1: relogio File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/relogio.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file pc.vhd
+    Info (12022): Found design unit 1: PC-pc1 File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/pc.vhd Line: 20
+    Info (12023): Found entity 1: PC File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/pc.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file mux3.vhd
+    Info (12022): Found design unit 1: mux3-rtl File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/mux3.vhd Line: 12
+    Info (12023): Found entity 1: mux3 File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/mux3.vhd Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file decodificador.vhd
+    Info (12022): Found design unit 1: decodificador-su File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/decodificador.vhd Line: 28
+    Info (12023): Found entity 1: decodificador File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/decodificador.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file processador.vhd
+    Info (12022): Found design unit 1: processador-description File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/processador.vhd Line: 31
+    Info (12023): Found entity 1: processador File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/processador.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file rom.vhd
+    Info (12022): Found design unit 1: rom-rtl File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/rom.vhd Line: 24
+    Info (12023): Found entity 1: rom File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/rom.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file ula.vhd
+    Info (12022): Found design unit 1: ULA-ula1 File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/ula.vhd Line: 24
+    Info (12023): Found entity 1: ULA File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/ula.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file divisorGenerico.vhd
+    Info (12022): Found design unit 1: divisorGenerico-divInteiro File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/divisorGenerico.vhd Line: 14
+    Info (12023): Found entity 1: divisorGenerico File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/divisorGenerico.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file somadorGenerico.vhd
+    Info (12022): Found design unit 1: somadorGenerico-comportamento File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/somadorGenerico.vhd Line: 17
+    Info (12023): Found entity 1: somadorGenerico File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/somadorGenerico.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file mux2.vhd
+    Info (12022): Found design unit 1: mux2-muxSelect File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/mux2.vhd Line: 26
+    Info (12023): Found entity 1: mux2 File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/mux2.vhd Line: 12
+Info (12021): Found 2 design units, including 1 entities, in source file bancoRegistradores.vhd
+    Info (12022): Found design unit 1: bancoRegistradores-comportamento File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/bancoRegistradores.vhd Line: 30
+    Info (12023): Found entity 1: bancoRegistradores File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/bancoRegistradores.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file conversorHex7Seg.vhd
     Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/conversorHex7Seg.vhd Line: 17
     Info (12023): Found entity 1: conversorHex7Seg File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/conversorHex7Seg.vhd Line: 4
-Info (12021): Found 1 design units, including 1 entities, in source file top_level.vhd
-    Info (12023): Found entity 1: top_level File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/top_level.vhd Line: 4
-Info (12127): Elaborating entity "conversorHex7Seg" for the top level hierarchy
+Info (12021): Found 2 design units, including 1 entities, in source file uc.vhd
+    Info (12022): Found design unit 1: uc-description File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/uc.vhd Line: 14
+    Info (12023): Found entity 1: uc File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/uc.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file hex7seg_top.vhd
+    Info (12022): Found design unit 1: hex7seg_top-hex7seg File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/hex7seg_top.vhd Line: 15
+    Info (12023): Found entity 1: hex7seg_top File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/hex7seg_top.vhd Line: 4
+Info (12127): Elaborating entity "relogio" for the top level hierarchy
+Info (12128): Elaborating entity "processador" for hierarchy "processador:processador" File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/relogio.vhd Line: 31
+Info (12128): Elaborating entity "uc" for hierarchy "processador:processador|uc:uc" File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/processador.vhd Line: 40
+Info (12128): Elaborating entity "ULA" for hierarchy "processador:processador|ULA:ula" File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/processador.vhd Line: 52
+Info (12128): Elaborating entity "mux2" for hierarchy "processador:processador|mux2:mux2" File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/processador.vhd Line: 62
+Info (12128): Elaborating entity "somadorGenerico" for hierarchy "processador:processador|somadorGenerico:somadorGenerico" File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/processador.vhd Line: 71
+Info (12128): Elaborating entity "mux3" for hierarchy "processador:processador|mux3:mux3" File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/processador.vhd Line: 77
+Info (12128): Elaborating entity "bancoRegistradores" for hierarchy "processador:processador|bancoRegistradores:bancoRegistradores" File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/processador.vhd Line: 94
+Info (12128): Elaborating entity "PC" for hierarchy "processador:processador|PC:pc" File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/processador.vhd Line: 106
+Info (12128): Elaborating entity "rom" for hierarchy "rom:rom" File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/relogio.vhd Line: 42
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276004): RAM logic "processador:processador|bancoRegistradores:bancoRegistradores|registrador" is uninferred due to inappropriate RAM size File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/bancoRegistradores.vhd Line: 36
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "rw[1]" is stuck at GND File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/relogio.vhd Line: 17
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 33 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 28 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 7 input pins
-    Info (21059): Implemented 7 output pins
-    Info (21061): Implemented 14 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 965 megabytes
-    Info: Processing ended: Wed Aug 28 09:25:14 2019
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:14
+Warning (21074): Design contains 8 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "datain[0]" File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/relogio.vhd Line: 15
+    Warning (15610): No output dependent on input pin "datain[7]" File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/relogio.vhd Line: 15
+    Warning (15610): No output dependent on input pin "datain[6]" File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/relogio.vhd Line: 15
+    Warning (15610): No output dependent on input pin "datain[5]" File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/relogio.vhd Line: 15
+    Warning (15610): No output dependent on input pin "datain[4]" File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/relogio.vhd Line: 15
+    Warning (15610): No output dependent on input pin "datain[3]" File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/relogio.vhd Line: 15
+    Warning (15610): No output dependent on input pin "datain[2]" File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/relogio.vhd Line: 15
+    Warning (15610): No output dependent on input pin "datain[1]" File: /home/parallels/intelFPGA_lite/17.1/projeto_relogio/relogio.vhd Line: 15
+Info (21057): Implemented 101 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 9 input pins
+    Info (21059): Implemented 18 output pins
+    Info (21061): Implemented 74 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 968 megabytes
+    Info: Processing ended: Sat Oct  5 17:35:23 2019
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:18
 
 
