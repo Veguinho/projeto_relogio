@@ -15,8 +15,7 @@ entity rom is
 
 	port 
 	(
-		clk		: in std_logic;
-		addr	: in natural range 0 to 2**ADDR_WIDTH - 1;
+		addr	: in std_logic_vector (ADDR_WIDTH - 1 downto 0);
 		q		: out std_logic_vector((DATA_WIDTH -1) downto 0)
 	);
 
@@ -31,12 +30,18 @@ architecture rtl of rom is
 	function init_rom
 		return memory_t is 
 		variable tmp : memory_t := (others => (others => '0'));
-	begin 
-		for addr_pos in 0 to 2**ADDR_WIDTH - 1 loop 
-			-- Initialize each address with the address itself
-			tmp(addr_pos) := std_logic_vector(to_unsigned(addr_pos, DATA_WIDTH));
-		end loop;
-		return tmp;
+		
+		begin
+        -- Inicializa os endereços:
+        tmp(0) := b"0000_000_000_001_01010101";
+        tmp(1) := b"1100_000_001_000_00000000";
+        tmp(2) := b"1100_000_001_000_00000001";
+        tmp(3) := b"1100_000_001_000_00000010";
+        tmp(4) := b"1100_000_001_000_00000011";
+--        tmp(5) := ;
+--        tmp(6) := ;
+--        tmp(7) := ;
+        return tmp;
 	end init_rom;	 
 
 	-- Declare the ROM signal and specify a default value.	Quartus Prime
@@ -45,12 +50,5 @@ architecture rtl of rom is
 	signal rom : memory_t := init_rom;
 
 begin
-
-	process(clk)
-	begin
-	if(rising_edge(clk)) then
-		q <= rom(addr);
-	end if;
-	end process;
-
+		q <= rom(to_integer(unsigned(addr)));
 end rtl;

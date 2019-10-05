@@ -10,7 +10,7 @@ entity conversorHex7Seg is
         negativo : in  std_logic := '0';
         overFlow : in  std_logic := '0';
         -- Output ports
-        HEX0 : out std_logic_vector(6 downto 0)  -- := (others => '1')
+        saida7seg : out std_logic_vector(6 downto 0)  -- := (others => '1')
     );
 end entity;
 
@@ -50,7 +50,7 @@ begin
                             "0001110" when dadoHex="1111" else ---F
                             "1111111"; -- Apaga todos segmentos.
 
-    HEX0 <=     "1100010" when (overFlow='1') else
+    saida7seg <=     "1100010" when (overFlow='1') else
                             "1111111" when (apaga='1' and negativo='0') else
                             "0111111" when (apaga='0' and negativo='1') else
                             rascSaida7seg;
