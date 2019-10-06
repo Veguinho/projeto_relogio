@@ -27,16 +27,17 @@ begin
 		mux2 <= "10" when "0000", -- MOV
 		"10" when instr_add, --ADD
 		"10" when "0010", --COMP 
-		"00" when "0110", --COMPI
+		"10" when "0110", --COMPI
 		"00" when "0101", --READ
-		"11" when "0100",  --JMP
-		"11" when "0011", --JE
+		"00" when "0100",  --JMP
+		"00" when "0011", --JE
 		"01" when others; --COMPR e WRITE
 		
 	with op select	
 		we <= '1' when "0101", --READ
 		'1' when "0110", --COMPI
 		'1' when "0001",  --ADD
+		'1' when "0000",  -- MOV
 		'0' when others;
 		
 	with op select
@@ -48,7 +49,7 @@ begin
 		opr <= "01" when "0001", --ADD,
 		"10" when "0010", --COMP
 		"10" when "1110", --COMPR
-		"11" when "0110", --COMPI
+		"10" when "0110", --COMPI
 		"00" when others;
 		
 		

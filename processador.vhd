@@ -30,9 +30,9 @@ end entity;
 
 architecture description of processador is
 
-	signal enable_uc , flag_uc, select_mux1, we_uc, muxDOutSel  :std_logic;
+	signal flag_uc, select_mux1, we_uc, muxDOutSel  :std_logic;
 	signal ula_instr ,select_mux2 : std_logic_vector(1 downto 0);
-	signal mux1_out,mux2_out,addr_out,s1,s2,ula_out, muxDOut_out: std_logic_vector(DATA_WIDTH-1 downto 0) ;
+	signal mux1_out,mux2_out,addr_out,s1,s2,ula_out, muxDOut_out: std_logic_vector(DATA_WIDTH-1 downto 0);
 	signal pc_out : std_logic_vector(ROM_ADDR_W-1 downto 0);
 	
 	begin
@@ -63,7 +63,7 @@ architecture description of processador is
 		port map(
 			A=>addr_out,
 			B=>rom_in(7 downto 0), 
-			Sel=>select_mux1 , 
+			Sel=>select_mux1, 
 			Y=>mux1_out
 		);
 
@@ -81,7 +81,6 @@ architecture description of processador is
 		  a2=>rom_in(7 downto 0),
 		  sel=>select_mux2,
 		  b=>mux2_out
-				
 		);
 		
 	muxDataOut: entity work.mux2
@@ -89,7 +88,7 @@ architecture description of processador is
 			A=>ula_out,
 			B=>s2, 
 			Sel=>muxDOutSel, 
-			Y=>muxDOut_out
+			Y=>dataout
 		);
 	bancoRegistradores: entity work.bancoRegistradores
 		port map(
@@ -112,7 +111,7 @@ architecture description of processador is
 		
 	
 	rom_addr <= pc_out;
-	dataout <= muxDOut_out;
+	--dataout <= muxDOut_out;
 	addr <= rom_in(7 downto 0);
 	
 end description;

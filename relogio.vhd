@@ -25,7 +25,6 @@ architecture relogio_top of relogio is
 	signal rom_data: std_logic_vector(word-1 downto 0);
 	signal rom_addr: std_logic_vector(addr_width-1 downto 0);
 	
-
 	begin
 	
 	processador: entity work.processador
