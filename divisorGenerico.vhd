@@ -4,20 +4,23 @@
 
    entity divisorGenerico is
     generic
-    (divisor : natural := 250000000);
+    (divisor : natural := 25000000);
        port(
+			  sw_in_0 = SW(0);
+			  sw_in_1 = SW(1);
 			  reset : in std_logic;
-           clk      :   in std_logic;
-           saida_clk :   out std_logic
+           clk : in std_logic;
+           saida_clk : out std_logic
            );
    end entity;
 
 	architecture divInteiro of divisorGenerico is
         signal tick : std_logic := '0';
-        signal contador : integer range 0 to divisor+1 := 0;
+        signal contador : integer range 0 to divisor + 1 := 0;
    begin
         process(clk)
         begin
+			if sw_in_0 = '0' and sw_in_1 = '0' then
             if rising_edge(clk) then
                 if contador = divisor then
 						if reset = '1' then
@@ -28,6 +31,43 @@
                     contador <= contador + 1;
                 end if;
             end if;
+			
+			elsif sw_in_0 = '1' sw_in_1 = '0' then
+            if rising_edge(clk) then
+                if contador = divisor/10 then
+						if reset = '1' then
+                    contador <= 0;
+                    tick <= not tick;
+						end if;
+                else
+                    contador <= contador + 1;
+                end if;
+            end if;
+				
+			elsif sw_in_0 = '0' and sw_in_1 = '1' then
+            if rising_edge(clk) then
+                if contador = divisor/100 then
+						if reset = '1' then
+                    contador <= 0;
+                    tick <= not tick;
+						end if;
+                else
+                    contador <= contador + 1;
+                end if;
+            end if;
+				
+			else 
+				if rising_edge(clk) then
+					 if contador = divisor/500 then
+						if reset = '1' then
+						  contador <= 0;
+						  tick <= not tick;
+						end if;
+					 else
+						  contador <= contador + 1;
+					 end if;
+					end if;
+			end if;
         end process;
     saida_clk <= tick;
     end architecture divInteiro;
