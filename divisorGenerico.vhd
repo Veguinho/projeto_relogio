@@ -4,9 +4,9 @@
 
    entity divisorGenerico is
     generic
-    (divisor : natural := 2500000);
+    (divisor : natural := 250000000);
        port(
-			  --reset : in std_logic;
+			  reset : in std_logic;
            clk      :   in std_logic;
            saida_clk :   out std_logic
            );
@@ -20,8 +20,10 @@
         begin
             if rising_edge(clk) then
                 if contador = divisor then
+						if reset = '1' then
                     contador <= 0;
                     tick <= not tick;
+						end if;
                 else
                     contador <= contador + 1;
                 end if;

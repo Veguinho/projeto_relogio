@@ -23,8 +23,10 @@ architecture reg4_1 of reg4 is
 begin
 	process(clk) is
 		begin
-			if (rising_edge(clk) and (habilita = '1')) then
+			if rising_edge(clk) then
+			  if habilita = '1' then
 				reg4_o <= reg4_i;
+			  end if;
 			end if;
 	end process;
 end architecture;

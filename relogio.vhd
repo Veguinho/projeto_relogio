@@ -12,8 +12,9 @@ entity relogio is
 	addr_width : natural := 8
 	);
 		port(
-		clk : in std_logic;
-		KEY : in  std_logic_vector(3 downto 0)
+		CLOCK_50 : in std_logic;
+		KEY : in  std_logic_vector(3 downto 0);
+		HEX0, HEX1, HEX2, HEX3, HEX4, HEX5 : OUT STD_LOGIC_VECTOR(6 downto 0)
 	);
 end entity;
 
@@ -32,7 +33,7 @@ architecture relogio_top of relogio is
 		port map(
 		datain => ("000" & (datain_unprocessed_basetempo & datain_unprocessed_botoes)),
 		rom_in => rom_data, 
-		clk => clk,
+		clk => CLOCK_50,
 		rom_addr => rom_addr,
 		rw => rw,     
 		dataout => dataout,   
@@ -61,7 +62,7 @@ architecture relogio_top of relogio is
 	
 	hex7seg: entity work.hex7seg_top
 	port map(
-	clk => clk,
+	clk =>  CLOCK_50,
 	dado_reg0 => dataout(3 downto 0),
 	dado_reg1 => dataout(3 downto 0),
 	dado_reg2 => dataout(3 downto 0), 
@@ -73,15 +74,13 @@ architecture relogio_top of relogio is
 	habilita2 => habilitamu, 
 	habilita3 => habilitamd, 
 	habilita4 => habilitahu, 
-	habilita5 => habilitahd
---  HEX0, 
---	HEX1, 
---	HEX2, 
---	HEX3, 
---	HEX4, 
---	HEX5, 
---	HEX6, 
---	HEX7
+	habilita5 => habilitahd,
+   HEX0 => HEX0, 
+	HEX1 => HEX1, 
+	HEX2 => HEX2, 
+	HEX3 => HEX3, 
+	HEX4 => HEX4, 
+	HEX5 => HEX5
 	);
 	
 	botoes: entity work.botoes
@@ -93,7 +92,8 @@ architecture relogio_top of relogio is
 	
 	base_tempo: entity work.divisorGenerico
 	port map(
-		clk => clk,
+		reset => basetempo,
+		clk =>  CLOCK_50,
       saida_clk => datain_unprocessed_basetempo
 	);
 	
