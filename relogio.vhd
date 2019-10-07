@@ -68,8 +68,12 @@ architecture relogio_top of relogio is
 	dado_reg3 => dataout(3 downto 0), 
 	dado_reg4 => dataout(3 downto 0), 
 	dado_reg5 => dataout(3 downto 0), 
-	dado_reg6 => dataout(3 downto 0), 
-	dado_reg7 => dataout(3 downto 0)
+	habilita0 => habilitasu, 
+	habilita1 => habilitasd, 
+	habilita2 => habilitamu, 
+	habilita3 => habilitamd, 
+	habilita4 => habilitahu, 
+	habilita5 => habilitahd
 --  HEX0, 
 --	HEX1, 
 --	HEX2, 

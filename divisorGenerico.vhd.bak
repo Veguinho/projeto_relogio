@@ -6,7 +6,6 @@
     generic
     (divisor : natural := 2500000);
        port(
-			  --reset : in std_logic;
            clk      :   in std_logic;
            saida_clk :   out std_logic
            );

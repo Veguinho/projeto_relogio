@@ -1,5 +1,7 @@
 library IEEE;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
 
 entity reg4 is
 	generic
@@ -10,7 +12,7 @@ entity reg4 is
         (
             -- Input ports
             reg4_i : in  std_logic_vector(data-1 downto 0);
-            clk : in  std_logic;
+            clk, habilita : in  std_logic;
             -- Output ports
             reg4_o : out std_logic_vector(data-1 downto 0)
         );
@@ -21,7 +23,7 @@ architecture reg4_1 of reg4 is
 begin
 	process(clk) is
 		begin
-			if (rising_edge(clk)) then
+			if (rising_edge(clk) and (habilita = '1')) then
 				reg4_o <= reg4_i;
 			end if;
 	end process;
