@@ -28,22 +28,22 @@ begin
 	reg5: entity work.reg4 port map(reg4_i => dado_reg5, clk => clk, reg4_o => reg5_out, habilita => habilita5);
 
 	display0 : entity work.conversorHex7seg
-		 Port map (saida7seg => HEX0, dadoHex => not reg0_out, apaga => '0', overFlow => '0', negativo => '0');
+		 Port map (saida7seg => HEX0, dadoHex =>  reg0_out, apaga => '0', overFlow => '0', negativo => '0');
 
 	display1 : entity work.conversorHex7seg
-		 Port map (saida7seg => HEX1, dadoHex => not reg1_out, apaga => '0', overFlow => '0', negativo => '0');
+		 Port map (saida7seg => HEX1, dadoHex =>  reg1_out, apaga => '0', overFlow => '0', negativo => '0');
 
 	display2 : entity work.conversorHex7seg
-		 Port map (saida7seg => HEX2, dadoHex => not reg2_out, apaga => '0', overFlow => '0', negativo => '0');
+		 Port map (saida7seg => HEX2, dadoHex =>  reg2_out, apaga => '0', overFlow => '0', negativo => '0');
 		 
 	display3 : entity work.conversorHex7seg
-		 Port map (saida7seg => HEX3, dadoHex => not reg3_out, apaga => '0', overFlow => '0', negativo => '0');
+		 Port map (saida7seg => HEX3, dadoHex => reg3_out, apaga => '0', overFlow => '0', negativo => '0');
 
 	display4 : entity work.conversorHex7seg
-		 Port map (saida7seg => HEX4, dadoHex => not reg4_out, apaga => '0', overFlow => '0', negativo => '0');
+		 Port map (saida7seg => HEX4, dadoHex => reg4_out, apaga => '0', overFlow => '0', negativo => '0');
 
 	display5 : entity work.conversorHex7seg
-		 Port map (saida7seg => HEX5, dadoHex => not reg5_out, apaga => '0', overFlow => '0', negativo => '0');
+		 Port map (saida7seg => HEX5, dadoHex => reg5_out, apaga => '0', overFlow => '0', negativo => '0');
 
 		 
 end architecture;

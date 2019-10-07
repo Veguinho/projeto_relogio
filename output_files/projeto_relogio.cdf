@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE115F29) Path("/home/parallels/intelFPGA_lite/17.1/projeto_relogio/output_files/") File("projeto_relogio.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE115F29) Path("C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/output_files/") File("projeto_relogio.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
