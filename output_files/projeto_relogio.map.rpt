@@ -1,5 +1,5 @@
 Analysis & Synthesis report for projeto_relogio
-Mon Oct 07 14:41:51 2019
+Mon Oct 07 20:22:36 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -67,16 +67,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Oct 07 14:41:51 2019       ;
+; Analysis & Synthesis Status        ; Successful - Mon Oct 07 20:22:36 2019       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; projeto_relogio                             ;
 ; Top-level Entity Name              ; relogio                                     ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 405                                         ;
-;     Total combinational functions  ; 329                                         ;
-;     Dedicated logic registers      ; 126                                         ;
-; Total registers                    ; 126                                         ;
-; Total pins                         ; 47                                          ;
+; Total logic elements               ; 431                                         ;
+;     Total combinational functions  ; 351                                         ;
+;     Dedicated logic registers      ; 128                                         ;
+; Total registers                    ; 128                                         ;
+; Total pins                         ; 65                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -218,30 +218,30 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 405            ;
+; Estimated Total logic elements              ; 431            ;
 ;                                             ;                ;
-; Total combinational functions               ; 329            ;
+; Total combinational functions               ; 351            ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 229            ;
-;     -- 3 input functions                    ; 47             ;
-;     -- <=2 input functions                  ; 53             ;
+;     -- 4 input functions                    ; 259            ;
+;     -- 3 input functions                    ; 37             ;
+;     -- <=2 input functions                  ; 55             ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 288            ;
-;     -- arithmetic mode                      ; 41             ;
+;     -- normal mode                          ; 312            ;
+;     -- arithmetic mode                      ; 39             ;
 ;                                             ;                ;
-; Total registers                             ; 126            ;
-;     -- Dedicated logic registers            ; 126            ;
+; Total registers                             ; 128            ;
+;     -- Dedicated logic registers            ; 128            ;
 ;     -- I/O registers                        ; 0              ;
 ;                                             ;                ;
-; I/O pins                                    ; 47             ;
+; I/O pins                                    ; 65             ;
 ;                                             ;                ;
 ; Embedded Multiplier 9-bit elements          ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 126            ;
-; Total fan-out                               ; 1604           ;
-; Average fan-out                             ; 2.92           ;
+; Maximum fan-out                             ; 128            ;
+; Total fan-out                               ; 1771           ;
+; Average fan-out                             ; 2.91           ;
 +---------------------------------------------+----------------+
 
 
@@ -250,9 +250,10 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------+--------------------+--------------+
 ; Compilation Hierarchy Node                    ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                    ; Entity Name        ; Library Name ;
 +-----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------+--------------------+--------------+
-; |relogio                                      ; 329 (1)             ; 126 (0)                   ; 0           ; 0            ; 0       ; 0         ; 47   ; 0            ; |relogio                                                               ; relogio            ; work         ;
-;    |decodificador:decoficador|                ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|decodificador:decoficador                                     ; decodificador      ; work         ;
-;    |divisorGenerico:base_tempo|               ; 52 (52)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|divisorGenerico:base_tempo                                    ; divisorGenerico    ; work         ;
+; |relogio                                      ; 351 (1)             ; 128 (0)                   ; 0           ; 0            ; 0       ; 0         ; 65   ; 0            ; |relogio                                                               ; relogio            ; work         ;
+;    |botoes:botoes|                            ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|botoes:botoes                                                 ; botoes             ; work         ;
+;    |decodificador:decoficador|                ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|decodificador:decoficador                                     ; decodificador      ; work         ;
+;    |divisorGenerico:base_tempo|               ; 40 (40)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|divisorGenerico:base_tempo                                    ; divisorGenerico    ; work         ;
 ;    |hex7seg_top:hex7seg|                      ; 42 (0)              ; 24 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|hex7seg_top:hex7seg                                           ; hex7seg_top        ; work         ;
 ;       |conversorHex7Seg:display0|             ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|hex7seg_top:hex7seg|conversorHex7Seg:display0                 ; conversorHex7Seg   ; work         ;
 ;       |conversorHex7Seg:display1|             ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|hex7seg_top:hex7seg|conversorHex7Seg:display1                 ; conversorHex7Seg   ; work         ;
@@ -266,14 +267,14 @@ refer to the applicable agreement for further details.
 ;       |reg4:reg3|                             ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|hex7seg_top:hex7seg|reg4:reg3                                 ; reg4               ; work         ;
 ;       |reg4:reg4|                             ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|hex7seg_top:hex7seg|reg4:reg4                                 ; reg4               ; work         ;
 ;       |reg4:reg5|                             ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|hex7seg_top:hex7seg|reg4:reg5                                 ; reg4               ; work         ;
-;    |processador:processador|                  ; 128 (0)             ; 73 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|processador:processador                                       ; processador        ; work         ;
+;    |processador:processador|                  ; 132 (0)             ; 73 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|processador:processador                                       ; processador        ; work         ;
 ;       |PC:pc|                                 ; 8 (8)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|processador:processador|PC:pc                                 ; PC                 ; work         ;
-;       |ULA:ula|                               ; 34 (34)             ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|processador:processador|ULA:ula                               ; ULA                ; work         ;
-;       |bancoRegistradores:bancoRegistradores| ; 52 (52)             ; 64 (64)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|processador:processador|bancoRegistradores:bancoRegistradores ; bancoRegistradores ; work         ;
+;       |ULA:ula|                               ; 33 (33)             ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|processador:processador|ULA:ula                               ; ULA                ; work         ;
+;       |bancoRegistradores:bancoRegistradores| ; 56 (56)             ; 64 (64)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|processador:processador|bancoRegistradores:bancoRegistradores ; bancoRegistradores ; work         ;
 ;       |mux2:muxDataOut|                       ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|processador:processador|mux2:muxDataOut                       ; mux2               ; work         ;
-;       |mux3:mux3|                             ; 21 (21)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|processador:processador|mux3:mux3                             ; mux3               ; work         ;
-;       |uc:uc|                                 ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|processador:processador|uc:uc                                 ; uc                 ; work         ;
-;    |rom:rom|                                  ; 97 (97)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|rom:rom                                                       ; rom                ; work         ;
+;       |mux3:mux3|                             ; 23 (23)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|processador:processador|mux3:mux3                             ; mux3               ; work         ;
+;       |uc:uc|                                 ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|processador:processador|uc:uc                                 ; uc                 ; work         ;
+;    |rom:rom|                                  ; 128 (128)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|rom:rom                                                       ; rom                ; work         ;
 +-----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -283,25 +284,26 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 126   ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 128   ;
+; Number of registers using Synchronous Clear  ; 26    ;
 ; Number of registers using Synchronous Load   ; 8     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 88    ;
+; Number of registers using Clock Enable       ; 114   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
-; 3:1                ; 28 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; Yes        ; |relogio|divisorGenerico:base_tempo|contador[19] ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |relogio|processador:processador|ULA:ula|Mux7    ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |relogio|processador:processador|mux3:mux3|Mux6  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; 3:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |relogio|divisorGenerico:base_tempo|contador[8] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |relogio|processador:processador|mux3:mux3|Mux2 ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |relogio|processador:processador|ULA:ula|Mux3   ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |relogio|processador:processador|mux3:mux3|Mux4 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
 
 
 +-------------------------------------------------------------------------+
@@ -474,11 +476,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +-------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: divisorGenerico:base_tempo ;
-+----------------+-----------+--------------------------------------------+
-; Parameter Name ; Value     ; Type                                       ;
-+----------------+-----------+--------------------------------------------+
-; divisor        ; 250000000 ; Signed Integer                             ;
-+----------------+-----------+--------------------------------------------+
++----------------+----------+---------------------------------------------+
+; Parameter Name ; Value    ; Type                                        ;
++----------------+----------+---------------------------------------------+
+; v_normal       ; 50000000 ; Signed Integer                              ;
++----------------+----------+---------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -563,24 +565,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 47                          ;
-; cycloneiii_ff         ; 126                         ;
+; boundary_port         ; 65                          ;
+; cycloneiii_ff         ; 128                         ;
 ;     ENA               ; 88                          ;
+;     ENA SCLR          ; 26                          ;
 ;     SLD               ; 8                           ;
-;     plain             ; 30                          ;
-; cycloneiii_lcell_comb ; 335                         ;
-;     arith             ; 41                          ;
-;         2 data inputs ; 34                          ;
+;     plain             ; 6                           ;
+; cycloneiii_lcell_comb ; 357                         ;
+;     arith             ; 39                          ;
+;         2 data inputs ; 32                          ;
 ;         3 data inputs ; 7                           ;
-;     normal            ; 294                         ;
+;     normal            ; 318                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 8                           ;
-;         2 data inputs ; 16                          ;
-;         3 data inputs ; 40                          ;
-;         4 data inputs ; 229                         ;
+;         1 data inputs ; 9                           ;
+;         2 data inputs ; 19                          ;
+;         3 data inputs ; 30                          ;
+;         4 data inputs ; 259                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 11.00                       ;
-; Average LUT depth     ; 6.44                        ;
+; Max LUT depth         ; 10.70                       ;
+; Average LUT depth     ; 6.29                        ;
 +-----------------------+-----------------------------+
 
 
@@ -589,7 +592,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -599,11 +602,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Mon Oct 07 14:41:38 2019
+    Info: Processing started: Mon Oct 07 20:22:20 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off projeto_relogio -c projeto_relogio
 Info (20032): Parallel compilation is enabled and will use up to 2 processors
 Info (12021): Found 2 design units, including 1 entities, in source file relogio.vhd
-    Info (12022): Found design unit 1: relogio-relogio_top File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/relogio.vhd Line: 21
+    Info (12022): Found design unit 1: relogio-relogio_top File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/relogio.vhd Line: 22
     Info (12023): Found entity 1: relogio File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/relogio.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file pc.vhd
     Info (12022): Found design unit 1: PC-pc1 File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/pc.vhd Line: 20
@@ -624,7 +627,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file ula.vhd
     Info (12022): Found design unit 1: ULA-ula1 File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/ula.vhd Line: 24
     Info (12023): Found entity 1: ULA File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/ula.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file divisorgenerico.vhd
-    Info (12022): Found design unit 1: divisorGenerico-divInteiro File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/divisorGenerico.vhd Line: 15
+    Info (12022): Found design unit 1: divisorGenerico-divInteiro File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/divisorGenerico.vhd Line: 17
     Info (12023): Found entity 1: divisorGenerico File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/divisorGenerico.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file somadorgenerico.vhd
     Info (12022): Found design unit 1: somadorGenerico-comportamento File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/somadorGenerico.vhd Line: 17
@@ -645,13 +648,13 @@ Info (12021): Found 2 design units, including 1 entities, in source file hex7seg
     Info (12022): Found design unit 1: hex7seg_top-hex7seg File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/hex7seg_top.vhd Line: 12
     Info (12023): Found entity 1: hex7seg_top File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/hex7seg_top.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file botoes.vhd
-    Info (12022): Found design unit 1: botoes-comportamento File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/botoes.vhd Line: 15
+    Info (12022): Found design unit 1: botoes-comportamento File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/botoes.vhd Line: 16
     Info (12023): Found entity 1: botoes File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/botoes.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file reg4.vhd
     Info (12022): Found design unit 1: reg4-reg4_1 File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/reg4.vhd Line: 22
     Info (12023): Found entity 1: reg4 File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/reg4.vhd Line: 6
 Info (12127): Elaborating entity "relogio" for the top level hierarchy
-Info (12128): Elaborating entity "processador" for hierarchy "processador:processador" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/relogio.vhd Line: 32
+Info (12128): Elaborating entity "processador" for hierarchy "processador:processador" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/relogio.vhd Line: 33
 Info (12128): Elaborating entity "uc" for hierarchy "processador:processador|uc:uc" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/processador.vhd Line: 40
 Info (12128): Elaborating entity "ULA" for hierarchy "processador:processador|ULA:ula" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/processador.vhd Line: 52
 Info (12128): Elaborating entity "mux2" for hierarchy "processador:processador|mux2:mux2" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/processador.vhd Line: 62
@@ -659,26 +662,45 @@ Info (12128): Elaborating entity "somadorGenerico" for hierarchy "processador:pr
 Info (12128): Elaborating entity "mux3" for hierarchy "processador:processador|mux3:mux3" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/processador.vhd Line: 77
 Info (12128): Elaborating entity "bancoRegistradores" for hierarchy "processador:processador|bancoRegistradores:bancoRegistradores" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/processador.vhd Line: 93
 Info (12128): Elaborating entity "PC" for hierarchy "processador:processador|PC:pc" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/processador.vhd Line: 105
-Info (12128): Elaborating entity "rom" for hierarchy "rom:rom" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/relogio.vhd Line: 43
-Info (12128): Elaborating entity "decodificador" for hierarchy "decodificador:decoficador" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/relogio.vhd Line: 49
-Info (12128): Elaborating entity "hex7seg_top" for hierarchy "hex7seg_top:hex7seg" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/relogio.vhd Line: 63
+Info (12128): Elaborating entity "rom" for hierarchy "rom:rom" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/relogio.vhd Line: 44
+Info (12128): Elaborating entity "decodificador" for hierarchy "decodificador:decoficador" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/relogio.vhd Line: 50
+Info (12128): Elaborating entity "hex7seg_top" for hierarchy "hex7seg_top:hex7seg" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/relogio.vhd Line: 64
 Info (12128): Elaborating entity "reg4" for hierarchy "hex7seg_top:hex7seg|reg4:reg0" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/hex7seg_top.vhd Line: 18
 Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "hex7seg_top:hex7seg|conversorHex7Seg:display0" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/hex7seg_top.vhd Line: 30
-Info (12128): Elaborating entity "botoes" for hierarchy "botoes:botoes" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/relogio.vhd Line: 86
-Info (12128): Elaborating entity "divisorGenerico" for hierarchy "divisorGenerico:base_tempo" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/relogio.vhd Line: 93
+Info (12128): Elaborating entity "botoes" for hierarchy "botoes:botoes" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/relogio.vhd Line: 87
+Info (12128): Elaborating entity "divisorGenerico" for hierarchy "divisorGenerico:base_tempo" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/relogio.vhd Line: 95
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276004): RAM logic "processador:processador|bancoRegistradores:bancoRegistradores|registrador" is uninferred due to inappropriate RAM size File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/bancoRegistradores.vhd Line: 36
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 465 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 5 input pins
+Warning (21074): Design contains 18 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[0]" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/relogio.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/relogio.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/relogio.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/relogio.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/relogio.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/relogio.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/relogio.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/relogio.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/relogio.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/relogio.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[10]" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/relogio.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[11]" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/relogio.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[12]" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/relogio.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[13]" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/relogio.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[14]" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/relogio.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[15]" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/relogio.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[16]" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/relogio.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[17]" File: C:/Users/hugoc/Desktop/Insper/descomp/projeto_relogio/relogio.vhd Line: 15
+Info (21057): Implemented 509 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 23 input pins
     Info (21059): Implemented 42 output pins
-    Info (21061): Implemented 418 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4799 megabytes
-    Info: Processing ended: Mon Oct 07 14:41:51 2019
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:27
+    Info (21061): Implemented 444 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
+    Info: Peak virtual memory: 4800 megabytes
+    Info: Processing ended: Mon Oct 07 20:22:36 2019
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:33
 
 

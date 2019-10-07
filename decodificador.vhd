@@ -30,7 +30,7 @@ architecture su of decodificador is
 		  habilitamd <= '1' when entrada = "00000011" and rw = "01" else '0';
 		  habilitahu <= '1' when entrada = "00000100" and rw = "01" else '0';
 		  habilitahd <= '1' when entrada = "00000101" and rw = "01" else '0';
-		  habilitabot <= '1' when rw = "10" else '0';
-		  basetempo <= '1' when entrada = "00001011" and rw = "10" else '0';
+		  habilitabot <= '1' when entrada = "00000110"and rw = "10" else '0';
+		  basetempo <= '1' when entrada = "00010000" and rw = "10" else '0';
 end architecture;
 

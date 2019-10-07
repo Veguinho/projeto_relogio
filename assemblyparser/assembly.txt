@@ -11,67 +11,88 @@ write %md, $0x03
 write %mu, $0x02
 write %sd, $0x01
 write %su, $0x00
-mov %tmp2, $0x00
-write %tmp2, $0x10 -- ZERAR Base Tempo
 SOMAUSEG:
 add %su, $0x01
-comp %su, 0xA
+write %su, $0x00
+read %tmp1, $0x06 --AS
+comp %tmp1, $0x01
+je ADDSEG
+jmp ADD
+ADDSEG:
+add %su, $0x01
+write %su, $0x00
+comp %su, 0x0A
+je MOVSU
+ADD:
+read %tmp1, $0x06 --AM
+comp %tmp1, $0x02
+je SOMAMU
+read %tmp1 ,$0x06 --AH
+comp %tmp1, $0x04
+je SOMAHU
+read %tmp1 ,$0x06 --RC
+comp %tmp1, $0x08
+je INICIO
+comp %su, 0x0A
 je MOVSU
 COMPSEG:
 comp %sd, 0x6
 je MOVSD
 COMPMU:
-comp %mu, 0xA
+comp %mu, 0x0A
 je MOVMU
 COMPMD:
 comp %md, 0x6
 je MOVMD
 COMPHU:
-comp %hu, 0xA
+comp %hu, 0x0A
 je SOMAHD
 COMPG:
 compi %hu, 0x4, %tmp1
 compi %hd, 0x2, %tmp2
+comp %tmp1, 0x00
+je LOOP
+comp %tmp2, 0x00
+je LOOP
 compr %tmp1, %tmp2
 je INICIO
+jmp LOOP
 MOVSU:
 mov %su, $0x00
+write %su, $0x00
 SOMASD:
 add %sd, $0x01
+write %sd, $0x01
 jmp COMPSEG
 MOVSD:
 mov %sd, $0x00
+write %sd, $0x01
 SOMAMU:
 add %mu, $0x01
+write %mu, $0x02
 jmp COMPMU
 MOVMU:
 mov %mu, $0x00
+write %mu, $0x02
 SOMAMD:
 add %md, $0x01
+write %md, $0x03
 jmp COMPMD
 MOVMD:
 mov %md, $0x00
+write %md, $0x03
 SOMAHU:
 add %hu, $0x01
+write %hu, $0x04
 jmp COMPHU
 SOMAHD:
 mov %hu, $0x00
+write %hu, $0x00
 add %hd, $0x01
-jmp COMPSEG
+write %hd, $0x05
+jmp COMPG
 LOOP:
-read %tmp1, $0x06 --AS
-comp %tmp1, $0x04
-je SOMAUSEG
-read %tmp1, $0x07 --AM
-comp %tmp1, $0x08
-je SOMAMU
-read %tmp1 ,$0x08 --AH
+read %tmp1, $0x10 --BT
 comp %tmp1, $0x10
-je SOMAHU
-read %tmp1 ,$0x09 --RC
-comp %tmp1, $0x02
-je INICIO
-read %tmp1, $0x06 --BT
-comp %tmp1, $0x01
 je SOMAUSEG
 jmp LOOP

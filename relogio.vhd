@@ -12,6 +12,7 @@ entity relogio is
 	addr_width : natural := 8
 	);
 		port(
+		SW : in std_logic_vector(17 downto 0);
 		CLOCK_50 : in std_logic;
 		KEY : in  std_logic_vector(3 downto 0);
 		HEX0, HEX1, HEX2, HEX3, HEX4, HEX5 : OUT STD_LOGIC_VECTOR(6 downto 0)
@@ -85,6 +86,7 @@ architecture relogio_top of relogio is
 	
 	botoes: entity work.botoes
 	port map(
+	clk => CLOCK_50,
 	KEY => KEY,
    habilita_botoes => habilitabot,
    saida => datain_unprocessed_botoes
@@ -92,6 +94,8 @@ architecture relogio_top of relogio is
 	
 	base_tempo: entity work.divisorGenerico
 	port map(
+		sw_in_0 => SW(0),
+		sw_in_1 => SW(1),
 		reset => basetempo,
 		clk =>  CLOCK_50,
       saida_clk => datain_unprocessed_basetempo
