@@ -1,0 +1,21 @@
+library IEEE;
+use ieee.std_logic_1164.all;
+
+entity botoes is
+    port
+    (
+        -- Input ports
+        KEY : in  std_logic_vector(3 downto 0);
+        apaga   : in  std_logic := '0';
+        negativo : in  std_logic := '0';
+        overFlow : in  std_logic := '0';
+        -- Output ports
+        saida7seg : out std_logic_vector(6 downto 0)  -- := (others => '1')
+    );
+end entity;
+
+architecture comportamento of botoes is
+begin
+	
+
+end architecture;
