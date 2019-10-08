@@ -35,7 +35,7 @@ Total de instruções = 9 (MOV, ADD, COMP, JE, JMP, COMPI, WRITE, READ, COMPR)
 
 Instruções em Assembly:  
 IINICIO:
-mov %hd, $0x00         
+mov %hd, $0x00 \n        
 mov %hu, $0x00
 mov %md, $0x00
 mov %mu, $0x00
