@@ -7,6 +7,12 @@ Guilherme Leite
 Hugo Carl
 Rafael Vieira
 
+INSTRUÇÕES DE USO:
+
+- Para gerar o código binário, é necessário rodar o programa python "parser.py" localizado na pasta "assemblyparser". Para isso, é necessário que o arquivo do código assembly esteja nessa mesma pasta e devidamente formatado.
+- Com o código binário pronto, deve-se colocar este código binário no código VHDL da rom "rom.vhd" na seção referente ao código binário.
+- Depois, deve-se compilar e colocar o código em uma placa FPGA utilizando o programa Quartus Prime.
+
 Arquitetura: Registrador-Registrador
 
 O relógio possui 5 entradas, a base de tempo e 5 botões que tem as seguintes funções :
