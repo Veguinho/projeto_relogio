@@ -24,13 +24,13 @@ end entity;
 
 architecture su of decodificador is
     begin
-		  habilitasu <= '1' when entrada = "00000000" and rw = "01" else '0';
-		  habilitasd <= '1' when entrada = "00000001" and rw = "01" else '0';
-		  habilitamu <= '1' when entrada = "00000010" and rw = "01" else '0';
-		  habilitamd <= '1' when entrada = "00000011" and rw = "01" else '0';
-		  habilitahu <= '1' when entrada = "00000100" and rw = "01" else '0';
-		  habilitahd <= '1' when entrada = "00000101" and rw = "01" else '0';
-		  habilitabot <= '1' when entrada = "00000110"and rw = "10" else '0';
-		  basetempo <= '1' when entrada = "00010000" and rw = "10" else '0';
+		  habilitasu <= '1' when entrada = "00000000" and rw = "01" else '0'; --Escrever no display unidade de segundos
+		  habilitasd <= '1' when entrada = "00000001" and rw = "01" else '0'; --Escrever no display dezena de segundos
+		  habilitamu <= '1' when entrada = "00000010" and rw = "01" else '0'; --Escrever no display unidade de minutos
+		  habilitamd <= '1' when entrada = "00000011" and rw = "01" else '0'; --Escrever no display dezena de minutos
+		  habilitahu <= '1' when entrada = "00000100" and rw = "01" else '0'; --Escrever no display unidade de horas
+		  habilitahd <= '1' when entrada = "00000101" and rw = "01" else '0'; --Escrever no display dezena de horas
+		  habilitabot <= '1' when entrada = "00000110"and rw = "10" else '0'; --Habilitar leitura dos botoes
+		  basetempo <= '1' when entrada = "00010000" and rw = "10" else '0'; --Habilitar leitura da base de tempo
 end architecture;
 

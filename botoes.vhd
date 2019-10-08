@@ -24,5 +24,5 @@ begin
 		end if;
 	end process;
 	
-	saida <= not saidaQ when (habilita_botoes = '1') else "0000";
+	saida <= not saidaQ when (habilita_botoes = '1') else "0000"; --MANDA STATUS DO BOTAO QUANDO ESTIVER HABILITADO APENAS
 end architecture;

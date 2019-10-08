@@ -17,7 +17,7 @@ architecture description of uc is
 	constant instr_add : std_logic_vector(3 downto 0) := "0001";
 	
 begin
-	resultadoMux1 <= (flag = '1') and (op = "0011");
+	resultadoMux1 <= (flag = '1') and (op = "0011"); --JE QUANDO COMP RETORNA FLAG=1
 	
 	mux1 <= '1' when resultadoMux1 or op = "0100" else '0';
 	
@@ -52,57 +52,5 @@ begin
 		"10" when "0110", --COMPI
 		"00" when others;
 		
-		
---			elsif (op = "0011") then -- JE
---				if(flag='1')then	
---					mux2<="11";
---					mux1<='1';
---					we<=  '0';
---					rw<=  "00";
---					opr<="00";
---				elsif(flag='0') then
---					mux2<="11";
---					mux1<='0';
---					we<=  '0';
---					rw<=  "00";
---					opr<="00";	
---				end if;
---			
---			elsif (op = "0100") then -- JMP
---				mux2<="11";
---				mux1<='1';
---				we<=  '0';
---				rw<=  "00";
---				opr<="00";
---			
---			elsif (op = "0110") then -- COMPI
---				we<=  '1';
---				mux1<='0';
---				mux2<="00";
---				rw<=  "00";
---				opr<="11";
---
---			elsif (op = "0101") then -- READ
---				rw<=  "10";
---				we<=  '1';
---				mux1<='0';
---				mux2<="00";
---				opr<="00";
---				
---			elsif (op = "1100") then -- WRITE/STORE
---				opr<="00";
---				rw<=  "01";
---				we<=  '0';
---				mux1<='0';
---				mux2<="01";
---				
---			elsif (op = "1110") then -- COMPR
---				we<=  '0';
---				mux1<='0';
---				mux2<="01";
---				rw<=  "00";
---				opr<="10";
---
---			end if;
 
 end description;
