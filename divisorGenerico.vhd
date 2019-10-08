@@ -22,7 +22,7 @@ LIBRARY ieee;
    begin
 		concat <= sw_in_0 & sw_in_1;
 		with concat select
-		divisor <= v_normal/100 when "10",
+		divisor <= v_normal/100 when "10", --SELECAO DE VELOCIDADE
 					  v_normal/500 when "01",
 		           v_normal/5000 when "11",
 					  v_normal when others;
