@@ -11,9 +11,12 @@ write %md, $0x03
 write %mu, $0x02
 write %sd, $0x01
 write %su, $0x00
+jmp LOOP
 SOMAUSEG:
 add %su, $0x01
 write %su, $0x00
+comp %su, 0x0A
+je MOVSU
 read %tmp1, $0x06 --AS
 comp %tmp1, $0x01
 je ADDSEG
@@ -87,7 +90,7 @@ write %hu, $0x04
 jmp COMPHU
 SOMAHD:
 mov %hu, $0x00
-write %hu, $0x00
+write %hu, $0x04
 add %hd, $0x01
 write %hd, $0x05
 jmp COMPG

@@ -25,7 +25,7 @@ class Parser:
             if j[0] == "mov" or j[0] == "read":
                 self.bina.append(self.dicinst[j[0]] + "000000" + self.dicregs[j[1]] + self.hextobin8(j[2]))
             elif j[0] == "write" or j[0] == "comp" or j[0] == "add":
-                self.bina.append(self.dicinst[j[0]] + "000" + self.dicregs[j[1]] + "000" + self.hextobin8(j[2]))
+                self.bina.append(self.dicinst[j[0]] + "000" + self.dicregs[j[1]] + self.dicregs[j[1]] + self.hextobin8(j[2]))
             elif j[0] == "je" or j[0] == "jmp":
                 self.bina.append(self.dicinst[j[0]] + "000000000" + str(bin(self.label[j[1]])[2:].zfill(8)))
             elif j[0] == "compi":
@@ -33,10 +33,8 @@ class Parser:
             elif j[0] == "compr":
                 self.bina.append(self.dicinst[j[0]] + self.dicregs[j[1]] + self.dicregs[j[2]] + "00000000000")
         
-        
         print(self.bina)
-        print(self.label)
-        
+        print(self.label)  
         self.write_file()
     
     def hextobin8(self, hex):
@@ -44,14 +42,12 @@ class Parser:
 
     def write_file(self):
         output_file = open('binary.txt','w')
+        count = 0
         for i in self.bina:
-            output_file.write(i + '\n')
-        output_file.close()     
-    
-    
-
-
-        
+            output_file.write('tmp('+str(count)+') := b"')
+            output_file.write(i + '";\n')
+            count += 1
+        output_file.close()             
 
 if __name__ == '__main__':
     Parser = Parser()
